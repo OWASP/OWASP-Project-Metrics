@@ -1,0 +1,1747 @@
+===
+Project_Name|OWASP Zed Attack Proxy
+Project_Page|https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project
+Project_Website|svn 
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/zaproxy/
+Repository_Link|https://zaproxy.googlecode.com/svn/trunk
+Repository_Link|https://zaproxy-test.googlecode.com/svn/trunk/
+Repository_Link|https://zap-extensions.googlecode.com/svn/trunk/
+Repository_Link|https://zap-extensions.googlecode.com/svn/branches/beta/ 
+Repository_Link|https://zap-extensions.googlecode.com/svn/branches/alpha/
+===
+===
+Project_Name|OWASP WEBGOAT
+Project_Page|https://www.owasp.org/index.php/Webgoat
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/WebGoat/WebGoat
+Repository_Link|https://github.com/WebGoat/WebGoat.git
+Repository_Status|OLD
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/webgoat/
+Repository_Link|https://webgoat.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP WAPITI
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_Wapiti_Project
+Project_Website|http://wapiti.sourceforge.net
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|http://sourceforge.net/projects/wapiti/
+Repository_Link|https://svn.code.sf.net/p/wapiti/code/trunk
+===
+===
+Project_Name|OWASP Java HTML Sanitizer 
+Project_Page|https://www.owasp.org/index.php/OWASP_Java_HTML_Sanitizer
+Project_Website|https://code.google.com/p/owasp-java-html-sanitizer/
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/owasp-java-html-sanitizer/
+Repository_Link|https://owasp-java-html-sanitizer.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP Dependency Check
+Project_Page|https://www.owasp.org/index.php/OWASP_Dependency_Check
+Project_Website|http://jeremylong.github.io/DependencyCheck/
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/jeremylong/DependencyCheck
+Repository_Link|https://github.com/jeremylong/DependencyCheck.git
+Repository_Link|git://github.com/jeremylong/DependencyCheck.git
+===
+===
+Project_Name|OWASP OWTF
+Project_Page|https://www.owasp.org/index.php/OWASP_OWTF
+Project_Website|https://www.owasp.org/index.php/OWASP_OWTF
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/owtf/owtf
+Repository_Link|https://github.com/owtf/owtf.git
+Repository_Link|git://github.com/7a/owtf.git master 
+===
+===
+Project_Name|OWASP PHP Security Project
+Project_Page|https://www.owasp.org/index.php/OWASP_PHP_Security_Project
+Project_Website|http://phpsec.owasp.org
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/phpsec
+Repository_Link|git://github.com/OWASP/phpsec
+===
+===
+Project_Name|OWASP Development Guide Project
+Project_Page|https://www.owasp.org/index.php/OWASP_Guide_Project
+Project_Website|https://github.com/OWASP/DevGuide
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/DevGuide
+Repository_Link|https://github.com/OWASP/DevGuide.git
+Repository_Link|git://github.com/OWASP/DevGuide.git
+Repository_Status|OLD
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/owasp-development-guide/
+Repository_Link|http://owasp-development-guide.googlecode.com/svn/
+Repository_Status|OLD
+Repository_Type|SVN
+Repository_Page|http://sourceforge.net/projects/owasp/
+Repository_Link|:pserver:anonymous:@owasp.cvs.sourceforge.net:/cvsroot/owasp guide
+===
+===
+Project_Name|OWASP SafeNuGet
+Project_Page|https://www.owasp.org/index.php/OWASP_SafeNuGet_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/SafeNuGet
+Repository_Link|https://github.com/OWASP/SafeNuGet.git
+===
+===
+Project_Name|OWASP Hardened Phalcon
+Project_Page|https://www.owasp.org/index.php/OWASP_Hardened_Phalcon_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/OWASP-Hardened-Phalcon
+Repository_Link|https://github.com/OWASP/OWASP-Hardened-Phalcon.git
+Repository_Link|git://github.com/OWASP/OWASP-Hardened-Phalcon.git
+===
+===
+Project_Name|OWASP Rails Goat Project
+Project_Page|https://www.owasp.org/index.php/OWASP_Rails_Goat_Project
+Project_Website|http://railsgoat.cktricky.com
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/railsgoat
+Repository_Link|https://github.com/OWASP/railsgoat.git
+Repository_Link|git://github.com/OWASP/railsgoat.git
+===
+===
+Project_Name|O-Saft
+Project_Page|https://www.owasp.org/index.php/O-Saft
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/O-Saft
+Repository_Link|https://github.com/OWASP/O-Saft.git
+Repository_Link|git://github.com/OWASP/O-Saft.git
+===
+===
+Project_Name|OWASP PHPRBAC Project
+Project_Page|https://www.owasp.org/index.php/OWASP_PHPRBAC_Project
+Project_Website|http://sourceforge.net/projects/phprbac/
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/rbac
+Repository_Link|https://github.com/OWASP/rbac.git
+Repository_Link|git://github.com/OWASP/rbac.git
+===
+===
+Project_Name|Owasp Ruby on Rails and Friends Security Guide
+Project_Page|https://www.owasp.org/index.php/Projects/OWASP_Ruby_on_Rails_and_friends_Security_Guide
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/RoR-and-Friends-Security-Guide
+Repository_Link|https://github.com/OWASP/RoR-and-Friends-Security-Guide.git
+Repository_Link|git://github.com/OWASP/RoR-and-Friends-Security-Guide.git
+===
+===
+Project_Name|OWASP Node.js Goat Project
+Project_Page|https://www.owasp.org/index.php/OWASP_Node_js_Goat_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/NodeGoat
+Repository_Link|https://github.com/OWASP/NodeGoat.git
+Repository_Link|git://github.com/OWASP/NodeGoat.git
+===
+===
+Project_Name|OWASP NINJA PingU Project
+Project_Page|https://www.owasp.org/index.php/OWASP_NINJA_PingU_Project
+Project_Website|http://owasp.github.io/NINJA-PingU/
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/NINJA-PingU
+Repository_Link|https://github.com/OWASP/NINJA-PingU.git
+Repository_Link|git://github.com/OWASP/NINJA-PingU.git
+===
+===
+Project_Name|OWASP Project's Task Force
+Project_Page|https://www.owasp.org/index.php/Task_Force/OWASP_Projects
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/Projects_Task_Force
+Repository_Link|https://github.com/OWASP/Projects_Task_Force.git
+Repository_Link|git://github.com/OWASP/Projects_Task_Force.git
+===
+===
+Project_Name|OWASP Cuiaba
+Project_Page|
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/Cuiaba
+Repository_Link|https://github.com/OWASP/Cuiaba.git
+Repository_Link|git://github.com/OWASP/Cuiaba.git
+===
+===
+Project_Name|OWASP Vulnerable Web Applications Directory Project
+Project_Page|https://www.owasp.org/index.php/OWASP_Vulnerable_Web_Applications_Directory_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/OWASP-VWAD
+Repository_Link|https://github.com/OWASP/OWASP-VWAD.git
+Repository_Link|git://github.com/OWASP/OWASP-VWAD.git
+===
+===
+Project_Name|OWASP Security Principles
+Project_Page|https://www.owasp.org/index.php/OWASP_Security_Principles_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/Security-Principles
+Repository_Link|https://github.com/OWASP/Security-Principles.git
+Repository_Link|git://github.com/OWASP/Security-Principles.git
+===
+===
+Project_Name|OWASP AppSec Browser Bundle
+Project_Page|http://owasp.github.io/AppSec-Browser-Bundle
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/AppSec-Browser-Bundle
+Repository_Link|https://github.com/OWASP/AppSec-Browser-Bundle.git
+Repository_Link|git://github.com/OWASP/AppSec-Browser-Bundle.git
+===
+===
+Project_Name|OWASP WebScarab
+Project_Page|https://www.owasp.org/index.php/Webscarab
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/OWASP-WebScarab
+Repository_Link|https://github.com/OWASP/OWASP-WebScarab.git
+Repository_Link|git://github.com/OWASP/OWASP-WebScarab.git
+===
+===
+Project_Name|OWASP EJSF Project
+Project_Page|https://www.owasp.org/index.php/OWASP_EJSF_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/EJSF
+Repository_Link|https://github.com/OWASP/EJSF.git
+Repository_Link|git://github.com/OWASP/EJSF.git
+===
+===
+Project_Name|Simple Software Vulnerability Language (SSVL) 
+Project_Page|
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/SSVL
+Repository_Link|https://github.com/OWASP/SSVL.git
+Repository_Link|git://github.com/OWASP/SSVL.git
+===
+===
+Project_Name|OWASP Top 10
+Project_Page|https://www.owasp.org/index.php/OWASP_Top_Ten_Project
+Project_Website|http://owasp.github.io/OWASP-Top-10/
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/OWASP-Top-10
+Repository_Link|https://github.com/OWASP/OWASP-Top-10.git
+Repository_Link|git://github.com/OWASP/OWASP-Top-10.git
+===
+===
+Project_Name|OWASP Software Assurance Maturity Model
+Project_Page|https://www.owasp.org/index.php/Software_Assurance_Maturity_Model
+Project_Website|http://www.opensamm.org/
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/pchandra/opensamm
+Repository_Link|https://github.com/pchandra/opensamm.git
+Repository_Link|git://github.com/pchandra/opensamm.git
+Repository_Status|OLD
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/opensamm
+Repository_Link|https://github.com/OWASP/opensamm.git
+Repository_Link|git://github.com/OWASP/opensamm.git
+===
+===
+Project_Name|.NET ASP.NET Security Analyser
+Project_Page|
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/DotNet_ANSA
+Repository_Link|https://github.com/OWASP/DotNet_ANSA.git
+Repository_Link|git://github.com/OWASP/DotNet_ANSA.git
+===
+===
+Project_Name|HTML 5 slide templates for OWASP presentations
+Project_Page|
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/HTML5SlideTemplates
+Repository_Link|https://github.com/OWASP/HTML5SlideTemplates.git
+Repository_Link|git://github.com/OWASP/HTML5SlideTemplates.git
+===
+===
+Project_Name|OWASP WebGoat.NET
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_WebGoat.NET
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/WebGoat.NET
+Repository_Link|https://github.com/OWASP/WebGoat.NET.git
+Repository_Link|git://github.com/OWASP/WebGoat.NET.git
+Repository_Status|OLD
+Repository_Type|GIT
+Repository_Page|https://github.com/jerryhoff/WebGoat.NET
+Repository_Link|https://github.com/jerryhoff/WebGoat.NET.git
+Repository_Link|git://github.com/jerryhoff/WebGoat.NET.git
+Repository_Status|OLD
+Repository_Type|SVN
+Repository_Page|http://owasp.codeplex.com/
+Repository_Link|https://owasp.svn.codeplex.com/svn
+===
+===
+Project_Name|Owasp Esapi Ruby
+Project_Page|https://github.com/thesp0nge/owasp-esapi-ruby
+Project_Website|http://thesp0nge.com/owasp-esapi-ruby/
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/owasp-esapi-ruby
+Repository_Link|https://github.com/thesp0nge/owasp-esapi-ruby.git
+Repository_Link|git://github.com/thesp0nge/owasp-esapi-ruby.git
+===
+===
+Project_Name|OWASP AppSensor Handbook
+Project_Page|https://www.owasp.org/index.php/OWASP_AppSensor_Handbook
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/AppSensor-Handbook
+Repository_Link|https://github.com/OWASP/AppSensor-Handbook.git
+Repository_Link|git://github.com/OWASP/AppSensor-Handbook.git
+===
+===
+Project_Name|OWASP AppSensor Project
+Project_Page|https://www.owasp.org/index.php/OWASP_AppSensor_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/jtmelton/appsensor
+Repository_Link|https://github.com/jtmelton/appsensor.git
+Repository_Link|git://github.com/jtmelton/appsensor.git
+Repository_Status|OLD
+Repository_Type|GIT
+Repository_Page|https://code.google.com/p/appsensor/
+Repository_Link|http://appsensor.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP GoatDroid Project
+Project_Page|https://www.owasp.org/index.php/Projects/OWASP_GoatDroid_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/jackMannino/OWASP-GoatDroid-Project
+Repository_Link|https://github.com/jackMannino/OWASP-GoatDroid-Project.git
+Repository_Link|git://github.com/jackMannino/OWASP-GoatDroid-Project.git
+Repository_Status|OLD
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/OWASP-GoatDroid-Project
+Repository_Link|https://github.com/OWASP/OWASP-GoatDroid-Project.git
+Repository_Link|git://github.com/OWASP/OWASP-GoatDroid-Project.git
+===
+===
+Project_Name|OWASP Social Data
+Project_Page|
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/Social-Data
+Repository_Link|https://github.com/OWASP/Social-Data.git
+Repository_Link|git://github.com/OWASP/Social-Data.git
+===
+===
+Project_Name|Owasp Proxy
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_Proxy
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/OWASP-Proxy
+Repository_Link|https://github.com/OWASP/OWASP-Proxy.git
+Repository_Link|git://github.com/OWASP/OWASP-Proxy.git
+===
+===
+Project_Name|OWASP WebScarab-NG
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_WebScarab_NG_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/OWASP-WebScarab-NG
+Repository_Link|https://github.com/OWASP/OWASP-WebScarab-NG.git
+Repository_Link|git://github.com/OWASP/OWASP-WebScarab-NG.git
+===
+===
+Project_Name|Owasp Orizon Project
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_Orizon_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/owasp-orizon
+Repository_Link|https://github.com/OWASP/owasp-orizon.git
+Repository_Link|git://github.com/OWASP/owasp-orizon.git
+Repository_Status|OLD
+Repository_Type|GIT
+Repository_Page|https://github.com/thesp0nge/owasp-orizon
+Repository_Link|https://github.com/thesp0nge/owasp-orizon.git
+Repository_Link|git://github.com/thesp0nge/owasp-orizon.git
+Repository_Status|OLD
+Repository_Type|SVN
+Repository_Page|http://sourceforge.net/projects/orizon/
+Repository_Link|http://svn.code.sf.net/p/orizon/code/trunk
+Repository_Link|svn://svn.code.sf.net/p/orizon/code/trunk
+===
+===
+Project_Name|OWASP EnDe
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_EnDe
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/OWASP/OWASP-EnDe
+Repository_Link|https://github.com/OWASP/OWASP-EnDe.git
+Repository_Link|git://github.com/OWASP/OWASP-EnDe.git
+===
+===
+Project_Name|OWASP Dependency Track Project
+Project_Page|https://www.owasp.org/index.php/OWASP_Dependency_Track_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/stevespringett/dependency-track
+Repository_Link|https://github.com/stevespringett/dependency-track.git
+Repository_Link|git://github.com/stevespringett/dependency-track.git
+===
+===
+Project_Name|OWASP O2 Platform
+Project_Page|http://www.owasp.org/index.php/OWASP_O2_Platform
+Project_Website|http://o2platform.com
+Project_Website|http://o2platform.wordpress.com
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/o2platform/O2.Platform.Scripts
+Repository_Link|https://github.com/o2platform/O2.Platform.Scripts.git
+Repository_Link|git://github.com/o2platform/O2.Platform.Scripts.git
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/o2platform/O2.Platform.Projects
+Repository_Link|https://github.com/o2platform/O2.Platform.Projects.git
+Repository_Link|git://github.com/o2platform/O2.Platform.Projects.git
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/o2platform/FluentSharp
+Repository_Link|https://github.com/o2platform/FluentSharp.git
+Repository_Link|git://github.com/o2platform/FluentSharp.git
+===
+===
+Project_Name|OWASP Dependency-Check Jenkins Plugin
+Project_Page|
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/jenkinsci/dependency-check-plugin
+Repository_Link|https://github.com/jenkinsci/dependency-check-plugin.git
+Repository_Link|git://github.com/jenkinsci/dependency-check-plugin.git
+===
+===
+Project_Name|OWASP Passfault
+Project_Page|https://www.owasp.org/index.php/OWASP_Passfault
+Project_Website|http://www.passfault.com/
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/c-a-m/passfault
+Repository_Link|https://github.com/c-a-m/passfault.git
+Repository_Link|git://github.com/c-a-m/passfault.git
+===
+===
+Project_Name|OWASP VaultDB Project 
+Project_Page|https://www.owasp.org/index.php/OWASP_VaultDB_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/zalg/VaultDB
+Repository_Link|https://github.com/zalg/VaultDB.git
+Repository_Link|git://github.com/zalg/VaultDB.git
+===
+===
+Project_Name|OWASP ModSecurity Core Rule Set (CRS) Project 
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project
+Project_Website|http://spiderlabs.github.io/owasp-modsecurity-crs/
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/SpiderLabs/owasp-modsecurity-crs
+Repository_Link|https://github.com/SpiderLabs/owasp-modsecurity-crs.git
+Repository_Link|git://github.com/SpiderLabs/owasp-modsecurity-crs.git
+Repository_Status|OLD
+Repository_Type|GIT
+Repository_Page|https://github.com/rcbarnett/owasp-modsecurity-crs
+Repository_Link|https://github.com/rcbarnett/owasp-modsecurity-crs.git
+Repository_Link|git://github.com/rcbarnett/owasp-modsecurity-crs.git
+===
+===
+Project_Name|OWASP ESAPI for C++
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_Enterprise_Security_API#tab=ESAPI_CPP
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/owasp-esapi-cplusplus/
+Repository_Link|http://owasp-esapi-cplusplus.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP CSRFGuard
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_CSRFGuard_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/esheri3/OWASP-CSRFGuard
+Repository_Link|https://github.com/esheri3/OWASP-CSRFGuard.git
+Repository_Link|git://github.com/esheri3/OWASP-CSRFGuard.git
+===
+===
+Project_Name|OWASP SeraphimDroid 
+Project_Page|https://www.owasp.org/index.php/OWASP_SeraphimDroid_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/nikolamilosevic86/owasp-seraphimdroid
+Repository_Link|https://github.com/nikolamilosevic86/owasp-seraphimdroid.git
+Repository_Link|git://github.com/nikolamilosevic86/owasp-seraphimdroid.git
+===
+===
+Project_Name|OWASP ESAPI for Java EE
+Project_Page|https://code.google.com/p/owasp-esapi-java/
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/owasp-esapi-java/
+Repository_Link|http://owasp-esapi-java.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP Broken Web Applications Project
+Project_Page|https://www.owasp.org/index.php/OWASP_Broken_Web_Applications_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/owaspbwa/
+Repository_Link|http://owaspbwa.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP Security Research and Development Framework (SRDF)
+Project_Page|https://www.owasp.org/index.php/OWASP_Security_Research_and_Development_Framework
+Project_Website|http://security-framework.com/
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/AmrThabet/winSRDF
+Repository_Link|https://github.com/AmrThabet/winSRDF.git
+Repository_Link|git://github.com/AmrThabet/winSRDF.git
+===
+===
+Project_Name|OWASP Bricks 
+Project_Page|https://www.owasp.org/index.php/OWASP_Bricks
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/owaspbricks/
+Repository_Link|http://owaspbricks.googlecode.com/svn/
+===
+===
+Project_Name|OWASP Xenotix XSS Exploit Framework
+Project_Page|https://www.owasp.org/index.php/OWASP_Xenotix_XSS_Exploit_Framework
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/ajinabraham/OWASP-Xenotix-XSS-Exploit-Framework
+Repository_Link|https://github.com/ajinabraham/OWASP-Xenotix-XSS-Exploit-Framework.git
+Repository_Link|git://github.com/ajinabraham/OWASP-Xenotix-XSS-Exploit-Framework.git
+===
+===
+Project_Name|OWASP Hackademic
+Project_Page|
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/Hackademic/hackademic
+Repository_Link|https://github.com/Hackademic/hackademic.git
+Repository_Link|git://github.com/Hackademic/hackademic.git
+Repository_Status|OLD
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/owasp-hackademic-challenges/
+Repository_Link|http://owasp-hackademic-challenges.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP Bywaf
+Project_Page|https://www.owasp.org/index.php/OWASP_Bywaf_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/depasonico/OWASP-ByWaf/
+Repository_Link|https://github.com/depasonico/OWASP-ByWaf.git
+Repository_Link|git://github.com/depasonico/OWASP-ByWaf.git
+===
+===
+Project_Name|OWASP Java Encoder Project 
+Project_Page|https://www.owasp.org/index.php/OWASP_Java_Encoder_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/owasp-java-encoder/
+Repository_Link|http://owasp-java-encoder.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP ASIDE 
+Project_Page|https://www.owasp.org/index.php/OWASP_ASIDE_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/JunZhuSecurity/ASIDE-Education
+Repository_Link|https://github.com/JunZhuSecurity/ASIDE-Education.git
+Repository_Link|git://github.com/JunZhuSecurity/ASIDE-Education.git
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/JunZhuSecurity/ASIDE-CodeAnnotate
+Repository_Link|https://github.com/JunZhuSecurity/ASIDE-CodeAnnotate.git
+Repository_Link|git://github.com/JunZhuSecurity/ASIDE-CodeAnnotate.git
+===
+===
+Project_Name|OWASP ESAPI for Perl
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_Enterprise_Security_API#tab=ESAPI_Perl
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/zostay/owasp-esapi-perl
+Repository_Link|https://github.com/zostay/owasp-esapi-perl.git
+Repository_Link|git://github.com/zostay/owasp-esapi-perl.git
+===
+===
+Project_Name|OWASP Web Testing Environment (WTE)
+Project_Page|https://www.owasp.org/index.php?title=OWASP_Web_Testing_Environment_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/owasp-wte/
+Repository_Link|http://owasp-wte.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP Java XML Templates
+Project_Page|https://www.owasp.org/index.php/OWASP_Java_XML_Templates_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/owasp-jxt/
+Repository_Link|http://owasp-jxt.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP HTTP Post 
+Project_Page|https://www.owasp.org/index.php/OWASP_HTTP_Post_Tool
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/proactiveRISK/ddos-toolbox
+Repository_Link|https://github.com/proactiveRISK/ddos-toolbox.git
+Repository_Link|git://github.com/proactiveRISK/ddos-toolbox.git
+Repository_Status|OLD
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/owasp-dos-http-post/
+Repository_Link|http://owasp-dos-http-post.googlecode.com/svn/
+===
+===
+Project_Name|OWASP AntiSamy
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_AntiSamy_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://code.google.com/p/owaspantisamy/
+Repository_Link|https://code.google.com/p/owaspantisamy/
+===
+===
+Project_Name|OWASP 1-liner 
+Project_Page|https://www.owasp.org/index.php/OWASP_1-Liner
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/johnwilander/owasp-1-liner
+Repository_Link|https://github.com/johnwilander/owasp-1-liner.git
+Repository_Link|git://github.com/johnwilander/owasp-1-liner.git
+===
+===
+Project_Name|OWASP CSRF Tester
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_CSRFTester_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/owaspcsrftester/
+Repository_Link|http://owaspcsrftester.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP ESAPI for PHP
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_Enterprise_Security_API#tab=PHP
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/owasp-esapi-php/
+Repository_Link|http://owasp-esapi-php.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP ESAPI for DONET
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_Enterprise_Security_API#tab=Dot_NET
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/owasp-esapi-dotnet/
+Repository_Link|http://owasp-esapi-dotnet.googlecode.com/svn/trunk/ 
+===
+===
+Project_Name|OWASP ESAPI for Python
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_Enterprise_Security_API#tab=Python
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|HG
+Repository_Page|https://code.google.com/p/owasp-esapi-python/
+Repository_Link|https://code.google.com/p/owasp-esapi-python/
+===
+===
+Project_Name|OWASP ESAPI for Classic ASP
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_Enterprise_Security_API#tab=Classic_ASP
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/owasp-esapi-classicasp/
+Repository_Link|http://owasp-esapi-classicasp.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP Enterprise Security API (ESAPI) for ColdFusion/CFML Project
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_Enterprise_Security_API#tab=ColdFusion_CFML
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/damonmiller/esapi4cf
+Repository_Link|https://github.com/damonmiller/esapi4cf.git
+Repository_Link|git://github.com/damonmiller/esapi4cf.git
+===
+===
+Project_Name|OWASP ESAPI for JavaScript
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_Enterprise_Security_API#tab=JavaScript
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/owasp-esapi-js/
+Repository_Link|http://owasp-esapi-js.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP ESAPI for Objective C
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_Enterprise_Security_API#tab=Objective_C
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://bitbucket.org/owaspesapiobjectivec/
+Repository_Link|https://bitbucket.org/owaspesapiobjectivec/esapi-objective-c.git
+Repository_Link|git://bitbucket.org/owaspesapiobjectivec/esapi-objective-c.git
+Repository_Status|OLD
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/owasp-esapi-objective-c/
+Repository_Link|http://owasp-esapi-objective-c.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP ESAPI for Force.com
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_Enterprise_Security_API#tab=Force_com
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/force-dot-com-esapi/
+Repository_Link|http://force-dot-com-esapi.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP ESAPI for C
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_Enterprise_Security_API#tab=ESAPI_C
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/owasp-esapi-c/
+Repository_Link|http://owasp-esapi-c.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP YASCA
+Project_Page|https://www.owasp.org/index.php/Project_Information:template_Yasca_Project
+Project_Website|http://www.scovetta.com/yasca.html
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|http://sourceforge.net/projects/yasca/
+Repository_Link|https://svn.code.sf.net/p/yasca/code/ 
+Repository_Status|OLD
+Repository_Type|GIT
+Repository_Page|https://github.com/scovetta/yasca
+Repository_Link|https://github.com/scovetta/yasca.git
+Repository_Link|git://github.com/scovetta/yasca.git
+===
+===
+Project_Name|OWASP JAVA
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_Java_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/owasp-java/
+Repository_Link|http://owasp-java.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP PHP Input Validation Library
+Project_Page|
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/colezlaw/owasp-php-iv
+Repository_Link|https://github.com/colezlaw/owasp-php-iv.git
+Repository_Link|git://github.com/colezlaw/owasp-php-iv.git
+===
+===
+Project_Name|OWASP Odz MultiCMSScanner
+Project_Page|https://www.owasp.org/index.php/OWASP_Odz_MultiCMSScanner
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/islamoc/odz
+Repository_Link|https://github.com/islamoc/odz.git
+Repository_Link|git://github.com/islamoc/odz.git
+===
+===
+Project_Name|OWASP PCI Toolkit
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_PCI_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/owaspjocur/OwaspPciToolkit
+Repository_Link|https://github.com/owaspjocur/OwaspPciToolkit.git
+Repository_Link|git://github.com/owaspjocur/OwaspPciToolkit.git
+===
+===
+Project_Name|OWASP Mutillidae II Web Pen-Test Practice Application 
+Project_Page|https://www.owasp.org/index.php/OWASP_Mutillidae_2_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|http://sourceforge.net/projects/mutillidae/
+Repository_Link|http://git.code.sf.net/p/mutillidae/git
+Repository_Link|git://git.code.sf.net/p/mutillidae/git
+===
+===
+Project_Name|OWASP Source Code Center
+Project_Page|
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|CVS
+Repository_Page|http://sourceforge.net/projects/owasp/
+Repository_Link|cvs -z3 -d:pserver:anonymous@owasp.cvs.sourceforge.net:/cvsroot/owasp co -P ISO17799
+Repository_Link|cvs -z3 -d:pserver:anonymous@owasp.cvs.sourceforge.net:/cvsroot/owasp co -P TCVS
+Repository_Link|cvs -z3 -d:pserver:anonymous@owasp.cvs.sourceforge.net:/cvsroot/owasp co -P WAS
+Repository_Link|cvs -z3 -d:pserver:anonymous@owasp.cvs.sourceforge.net:/cvsroot/owasp co -P bmayhew
+Repository_Link|cvs -z3 -d:pserver:anonymous@owasp.cvs.sourceforge.net:/cvsroot/owasp co -P bpoweski
+Repository_Link|cvs -z3 -d:pserver:anonymous@owasp.cvs.sourceforge.net:/cvsroot/owasp co -P codeseeker
+Repository_Link|cvs -z3 -d:pserver:anonymous@owasp.cvs.sourceforge.net:/cvsroot/owasp co -P codespy
+Repository_Link|cvs -z3 -d:pserver:anonymous@owasp.cvs.sourceforge.net:/cvsroot/owasp co -P dotnet
+Repository_Link|cvs -z3 -d:pserver:anonymous@owasp.cvs.sourceforge.net:/cvsroot/owasp co -P filters
+Repository_Link|cvs -z3 -d:pserver:anonymous@owasp.cvs.sourceforge.net:/cvsroot/owasp co -P guide
+Repository_Link|cvs -z3 -d:pserver:anonymous@owasp.cvs.sourceforge.net:/cvsroot/owasp co -P ocl
+Repository_Link|cvs -z3 -d:pserver:anonymous@owasp.cvs.sourceforge.net:/cvsroot/owasp co -P oflow
+Repository_Link|cvs -z3 -d:pserver:anonymous@owasp.cvs.sourceforge.net:/cvsroot/owasp co -P oportal
+Repository_Link|cvs -z3 -d:pserver:anonymous@owasp.cvs.sourceforge.net:/cvsroot/owasp co -P owasp
+Repository_Link|cvs -z3 -d:pserver:anonymous@owasp.cvs.sourceforge.net:/cvsroot/owasp co -P portal
+Repository_Link|cvs -z3 -d:pserver:anonymous@owasp.cvs.sourceforge.net:/cvsroot/owasp co -P portal-content
+Repository_Link|cvs -z3 -d:pserver:anonymous@owasp.cvs.sourceforge.net:/cvsroot/owasp co -P stinger
+Repository_Link|cvs -z3 -d:pserver:anonymous@owasp.cvs.sourceforge.net:/cvsroot/owasp co -P testing
+Repository_Link|cvs -z3 -d:pserver:anonymous@owasp.cvs.sourceforge.net:/cvsroot/owasp co -P utilities
+Repository_Link|cvs -z3 -d:pserver:anonymous@owasp.cvs.sourceforge.net:/cvsroot/owasp co -P vulnxml
+Repository_Link|cvs -z3 -d:pserver:anonymous@owasp.cvs.sourceforge.net:/cvsroot/owasp co -P webgoat
+Repository_Link|cvs -z3 -d:pserver:anonymous@owasp.cvs.sourceforge.net:/cvsroot/owasp co -P webscarab
+===
+===
+Project_Name|OWASP Joomla! Security Scanner
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_Joomla_Vulnerability_Scanner_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|http://sourceforge.net/projects/joomscan/
+Repository_Link|http://svn.code.sf.net/p/joomscan/code/trunk
+Repository_Link|svn://svn.code.sf.net/p/joomscan/code/trunk
+===
+===
+Project_Name|OWASP Favicon Database Project
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_Favicon_Database_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|http://sourceforge.net/projects/owasp-favicon/
+Repository_Link|http://svn.code.sf.net/p/owasp-favicon/code/trunk
+Repository_Link|svn://svn.code.sf.net/p/owasp-favicon/code/trunk
+===
+===
+Project_Name|OWASP Hive
+Project_Page|https://www.owasp.org/index.php/OWASP_Hive_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|http://sourceforge.net/projects/owasphive/
+Repository_Link|http://git.code.sf.net/p/owasphive/code
+Repository_Link|git://git.code.sf.net/p/owasphive/code
+===
+===
+Project_Name|OWASP Filter Project
+Project_Page|
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|CVS
+Repository_Page|http://sourceforge.net/projects/owasp-input-api/
+Repository_Link|cvs -z3 -d:pserver:anonymous@owasp-input-api.cvs.sourceforge.net:/cvsroot/owasp-input-api co -P filters/
+===
+===
+Project_Name|OWASP Testing Project
+Project_Page|https://www.owasp.org/index.php/OWASP_Testing_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|http://sourceforge.net/projects/frameworkowasptestingguide/
+Repository_Link|http://svn.code.sf.net/p/frameworkowasptestingguide/code-0/
+Repository_Link|svn://svn.code.sf.net/p/frameworkowasptestingguide/code-0/
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|http://sourceforge.net/projects/frameworkowasptestingguide/
+Repository_Link|http://git.code.sf.net/p/frameworkowasptestingguide/code
+Repository_Link|git://git.code.sf.net/p/frameworkowasptestingguide/code
+===
+===
+Project_Name|OWASP Security Shepherd
+Project_Page|https://www.owasp.org/index.php/Projects/OWASP_Security_Shepherd/Roadmap
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|http://sourceforge.net/projects/owaspshepherd/
+Repository_Link|http://svn.code.sf.net/p/owaspshepherd/code/trunk
+Repository_Link|svn://svn.code.sf.net/p/owaspshepherd/code/trunk
+===
+===
+Project_Name|OWASP File Format Validation
+Project_Page|https://www.owasp.org/index.php/OWASP_File_Format_Validation_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|http://sourceforge.net/projects/owaspffv/
+Repository_Link|http://svn.code.sf.net/p/owaspffv/code-0/
+Repository_Link|svn://svn.code.sf.net/p/owaspffv/code-0/
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|http://sourceforge.net/projects/owaspffv/
+Repository_Link|http://git.code.sf.net/p/owaspffv/code
+Repository_Link|git://git.code.sf.net/p/owaspffv/code
+===
+===
+Project_Name|Projects/OWASP Mobile Security Project - MobiSec
+Project_Page|https://www.owasp.org/index.php/Projects/OWASP_Mobile_Security_Project_-_MobiSec
+Project_Website|http://mobisec.professionallyevil.com
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|http://sourceforge.net/projects/mobisec/
+Repository_Link|http://git.code.sf.net/p/mobisec/code mobisec-code
+Repository_Link|git://git.code.sf.net/p/mobisec/code mobisec-code
+===
+===
+Project_Name|OWASP FOSBBWAS (code name Beretta)
+Project_Page|https://www.owasp.org/index.php/OWASP_FOSBBWAS_(code_name_Beretta)
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|CVS
+Repository_Page|http://sourceforge.net/projects/beretta/
+Repository_Link|cvs -z3 -d:pserver:anonymous@beretta.cvs.sourceforge.net:/cvsroot/beretta co -P fosbbwas
+Repository_Link|cvs -z3 -d:pserver:anonymous@beretta.cvs.sourceforge.net:/cvsroot/beretta co -P webScanner
+Repository_Link|cvs -z3 -d:pserver:anonymous@beretta.cvs.sourceforge.net:/cvsroot/beretta co -P webScanner.ThirdParty
+===
+===
+Project_Name|Official Shellmates Repository (OWASP Algeria Student Chapter)
+Project_Page|https://www.owasp.org/index.php/Algeria_Student_Chapter
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|http://sourceforge.net/projects/shellmates/
+Repository_Link|http://git.code.sf.net/p/shellmates/code
+Repository_Link|git://git.code.sf.net/p/shellmates/code
+===
+===
+Project_Name|OWASP Xelenium Project
+Project_Page|https://www.owasp.org/index.php/OWASP_Xelenium_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|http://sourceforge.net/projects/xeleniumsecurit/
+Repository_Link|http://git.code.sf.net/p/xeleniumsecurit/code
+Repository_Link|git://git.code.sf.net/p/xeleniumsecurit/code
+===
+===
+Project_Name|JBroFuzz
+Project_Page|https://www.owasp.org/index.php/JBroFuzz
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|http://sourceforge.net/projects/jbrofuzz/
+Repository_Link|http://svn.code.sf.net/p/jbrofuzz/code/
+Repository_Link|svn://svn.code.sf.net/p/jbrofuzz/code/
+===
+===
+Project_Name|OWASP Focus
+Project_Page|https://www.owasp.org/index.php/OWASP_Focus
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|http://sourceforge.net/projects/owaspfocus/
+Repository_Link|http://git.code.sf.net/p/owaspfocus/code
+Repository_Link|git://git.code.sf.net/p/owaspfocus/code
+===
+===
+Project_Name|OWASP Encoding Project
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_Encoding_Project
+Project_Website|http://phed.org/reform-encoding-library/
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|CVS
+Repository_Page|http://sourceforge.net/projects/reform/
+Repository_Link|cvs -z3 -d:pserver:anonymous@reform.cvs.sourceforge.net:/cvsroot/reform co -P Reform
+===
+===
+Project_Name|OWASP OPA
+Project_Page|https://www.owasp.org/index.php/Opa
+Project_Website|http://opalang.org/
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/MLstate/opalang/
+Repository_Link|https://github.com/MLstate/opalang.git
+Repository_Link|git://github.com/MLstate/opalang.git
+===
+===
+Project_Name|OWASP JSON Sanitizer
+Project_Page|https://www.owasp.org/index.php/OWASP_JSON_Sanitizer
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://code.google.com/p/json-sanitizer/
+Repository_Link|https://code.google.com/p/json-sanitizer/
+Repository_Link|git://code.google.com/p/json-sanitizer/
+===
+===
+Project_Name|OWASP Java HTML Sanitizer Project
+Project_Page|https://www.owasp.org/index.php/OWASP_Java_HTML_Sanitizer_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/owasp-java-html-sanitizer/
+Repository_Link|http://owasp-java-html-sanitizer.googlecode.com/svn/trunk/
+Repository_Link|svn://owasp-java-html-sanitizer.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP iMAS - iOS Mobile Application
+Project_Page|https://www.owasp.org/index.php/OWASP_iMAS_iOS_Mobile_Application_Security_Project
+Project_Website|http://project-imas.github.io/
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/project-imas/about
+Repository_Link|https://github.com/project-imas/about.git
+Repository_Link|git://github.com/project-imas/about.git
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/project-imas/project-imas.github.com
+Repository_Link|https://github.com/project-imas/project-imas.github.com.git
+Repository_Link|git://github.com/project-imas/project-imas.github.com.git
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/project-imas/AppPasswordSampleApp
+Repository_Link|https://github.com/project-imas/AppPasswordSampleApp.git
+Repository_Link|git://github.com/project-imas/AppPasswordSampleApp.git
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/project-imas/app-password
+Repository_Link|https://github.com/project-imas/app-password.git
+Repository_Link|git://github.com/project-imas/app-password.git
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/project-imas/mdm-server
+Repository_Link|https://github.com/project-imas/mdm-server.git
+Repository_Link|git://github.com/project-imas/mdm-server.git
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/project-imas/securefoundation
+Repository_Link|https://github.com/project-imas/securefoundation.git
+Repository_Link|git://github.com/project-imas/securefoundation.git
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/project-imas/encrypted-core-data
+Repository_Link|https://github.com/project-imas/encrypted-core-data.git
+Repository_Link|git://github.com/project-imas/encrypted-core-data.git
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/project-imas/passcode-check
+Repository_Link|https://github.com/project-imas/passcode-check.git
+Repository_Link|git://github.com/project-imas/passcode-check.git
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/project-imas/ssl-conservatory
+Repository_Link|https://github.com/project-imas/ssl-conservatory.git
+Repository_Link|git://github.com/project-imas/ssl-conservatory.git
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/project-imas/memory-security
+Repository_Link|https://github.com/project-imas/memory-security.git
+Repository_Link|git://github.com/project-imas/memory-security.git
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/project-imas/security-check
+Repository_Link|https://github.com/project-imas/security-check.git
+Repository_Link|git://github.com/project-imas/security-check.git
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/project-imas/Remail-iPhone
+Repository_Link|https://github.com/project-imas/Remail-iPhone.git
+Repository_Link|git://github.com/project-imas/Remail-iPhone.git
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/project-imas/forced-inlining
+Repository_Link|https://github.com/project-imas/forced-inlining.git
+Repository_Link|git://github.com/project-imas/forced-inlining.git
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/project-imas/SCSampleApp
+Repository_Link|https://github.com/project-imas/SCSampleApp.git
+Repository_Link|git://github.com/project-imas/SCSampleApp.git
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/project-imas/single-sign-on
+Repository_Link|https://github.com/project-imas/single-sign-on.git
+Repository_Link|git://github.com/project-imas/single-sign-on.git
+===
+===
+Project_Name|OWASP NAXSI
+Project_Page|https://www.owasp.org/index.php/OWASP_NAXSI_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/nbs-system/naxsi
+Repository_Link|https://github.com/nbs-system/naxsi.git
+Repository_Link|git://github.com/nbs-system/naxsi.git
+===
+===
+Project_Name|OWASP Passw3rd
+Project_Page|https://www.owasp.org/index.php/OWASP_Passw3rd_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/oreoshake/passw3rd
+Repository_Link|https://github.com/oreoshake/passw3rd.git
+Repository_Link|git://github.com/oreoshake/passw3rd.git
+===
+===
+Project_Name|OWASP Path Traverser
+Project_Page|https://www.owasp.org/index.php/OWASP_Path_Traverser
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/nu11p0inter/PathTraverser
+Repository_Link|https://github.com/nu11p0inter/PathTraverser.git
+Repository_Link|git://github.com/nu11p0inter/PathTraverser.git
+===
+===
+Project_Name|OWASP XSSER
+Project_Page|https://www.owasp.org/index.php/OWASP_XSSER
+Project_Website|http://xsser.sourceforge.net/
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|http://sourceforge.net/projects/xsser/
+Repository_Link|http://svn.code.sf.net/p/xsser/code/trunk
+Repository_Link|svn://svn.code.sf.net/p/xsser/code/trunk
+===
+===
+Project_Name|OWASP iGoat Project
+Project_Page|https://www.owasp.org/index.php/OWASP_iGoat_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|HG
+Repository_Page|https://code.google.com/p/owasp-igoat/
+Repository_Link|https://code.google.com/p/owasp-igoat/
+===
+===
+Project_Name|OWASP SamuraiWTF
+Project_Page|https://www.owasp.org/index.php/OWASP_SamuraiWTF_Project
+Project_Website|http://www.samurai-wtf.org/
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|http://sourceforge.net/projects/samurai/
+Repository_Link|http://svn.code.sf.net/p/samurai/code/trunk
+Repository_Link|svn://svn.code.sf.net/p/samurai/code/trunk
+===
+===
+Project_Name|OWASP Skanda SSRF Exploitation Framework
+Project_Page|https://www.owasp.org/index.php/OWASP_Skanda_SSRF_Exploitation_Framework
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/jayeshchauhan/SKANDA
+Repository_Link|https://github.com/jayeshchauhan/SKANDA.git
+Repository_Link|git://github.com/jayeshchauhan/SKANDA.git
+===
+===
+Project_Name|OWASP Androick Project
+Project_Page|https://www.owasp.org/index.php/OWASP_Androick_Project
+Project_Website|http://sourceforge.net/projects/androick/
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/Flo354/Androick
+Repository_Link|https://github.com/Flo354/Androick.git
+Repository_Link|git://github.com/Flo354/Androick.git
+===
+===
+Project_Name|OWASP Webspa Project
+Project_Page|https://www.owasp.org/index.php/OWASP_WebSpa_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|http://sourceforge.net/projects/webspa/
+Repository_Link|http://svn.code.sf.net/p/webspa/code/trunk
+Repository_Link|svn://svn.code.sf.net/p/webspa/code/trunk
+===
+===
+Project_Name|OWASP Encoder Comparison Reference Project
+Project_Page|https://www.owasp.org/index.php/OWASP_Encoder_Comparison_Reference_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/boldersecurity/encoder-comparison-reference
+Repository_Link|https://github.com/boldersecurity/encoder-comparison-reference.git
+Repository_Link|git://github.com/boldersecurity/encoder-comparison-reference.git
+===
+===
+Project_Name|OWASP Lapse
+Project_Page|https://www.owasp.org/index.php/OWASP_LAPSE_Project
+Project_Website|http://evalues.es/?q=node/14
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/lapse-plus/
+Repository_Link|http://lapse-plus.googlecode.com/svn/
+===
+===
+Project_Name|OWASP Click Me Project
+Project_Page|https://www.owasp.org/index.php/OWASP_Click_Me_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/beingArunkumar/OWASP-ClickMe/
+Repository_Link|https://github.com/beingArunkumar/OWASP-ClickMe.git
+Repository_Link|git://github.com/beingArunkumar/OWASP-ClickMe.git
+===
+===
+Project_Name|OWASP XSecurity Project
+Project_Page|https://www.owasp.org/index.php/OWASP_XSecurity_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/XSecurity/XSecurity
+Repository_Link|https://github.com/XSecurity/XSecurity.git
+Repository_Link|git://github.com/XSecurity/XSecurity.git
+===
+===
+Project_Name|OWASP Pyttacker Project
+Project_Page|https://www.owasp.org/index.php/OWASP_Pyttacker_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/RoblesT/pyttacker
+Repository_Link|https://github.com/RoblesT/pyttacker.git
+Repository_Link|git://github.com/RoblesT/pyttacker.git
+===
+===
+Project_Name|OWASP Code Pulse
+Project_Page|https://www.owasp.org/index.php/OWASP_Code_Pulse_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/secdec/codepulse
+Repository_Link|https://github.com/secdec/codepulse.git
+Repository_Link|git://github.com/secdec/codepulse.git
+===
+===
+Project_Name|OWASP PHP Security Training Project
+Project_Page|https://www.owasp.org/index.php/OWASP_PHP_Security_Training_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://bitbucket.org/tpagel/php-security-training-system
+Repository_Link|https://bitbucket.org/tpagel/php-security-training-system.git
+===
+===
+Project_Name|OWASP Data Exchange Format Project
+Project_Page|https://www.owasp.org/index.php/OWASP_Data_Exchange_Format_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/TomStageDK/OWASP-DEF
+Repository_Link|https://github.com/TomStageDK/OWASP-DEF.git
+Repository_Link|git://github.com/TomStageDK/OWASP-DEF.git
+===
+===
+Project_Name|OWASP CBT
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_CBT_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/owasp-cbt-project/
+Repository_Link|http://owasp-cbt-project.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP Python Security
+Project_Page|https://www.owasp.org/index.php/OWASP_Python_Security_Project
+Project_Website|http://www.pythonsecurity.org
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/ebranca/owasp-pysec
+Repository_Link|https://github.com/ebranca/owasp-pysec.git
+Repository_Link|git://github.com/ebranca/owasp-pysec.git
+===
+===
+Project_Name|OWASP Incident Response Project
+Project_Page|https://www.owasp.org/index.php/OWASP_Incident_Response_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/proactiveRISK/IRTop10
+Repository_Link|https://github.com/proactiveRISK/IRTop10.git
+Repository_Link|git://github.com/proactiveRISK/IRTop10.git
+===
+===
+Project_Name|OWASP Code Crawler
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_Code_Crawler
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|http://codecrawler.codeplex.com
+Repository_Link|https://codecrawler.svn.codeplex.com/svn
+===
+===
+Project_Name|OWASP Code Central
+Project_Page|
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/owasp-code-central/
+Repository_Link|http://owasp-code-central.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP Access Control Rules Tester Project
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_Access_Control_Rules_Tester_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://code.google.com/p/accorute/
+Repository_Link|https://code.google.com/p/accorute/
+===
+===
+Project_Name|OWASP Report Generator
+Project_Page|https://www.owasp.org/index.php/ORG_%28OWASP_Report_Generator%29
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/org2/
+Repository_Link|http://org2.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP OpenSign Server Project
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_OpenSign_Server_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/opensign-project/
+Repository_Link|http://opensign-project.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP NetBouncer Project
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_NetBouncer_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/netbouncer/
+Repository_Link|http://netbouncer.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP JSP Testing Tool Project
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_JSP_Testing_Tool_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/owasp-jsp-testing-tool/
+Repository_Link|http://owasp-jsp-testing-tool.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP Insecure Web App Project
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_Insecure_Web_App_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|CVS
+Repository_Page|http://sourceforge.net/projects/insecurewebapp/
+Repository_Link|cvs -z3 -d:pserver:anonymous@insecurewebapp.cvs.sourceforge.net:/cvsroot/insecurewebapp co -P insecure
+Repository_Link|cvs -z3 -d:pserver:anonymous@insecurewebapp.cvs.sourceforge.net:/cvsroot/insecurewebapp co -P insecure-website
+===
+===
+Project_Name|OWASP Google Hacking Project
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_Google_Hacking_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/dic/
+Repository_Link|http://dic.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP Encoding Project
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_Encoding_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|http://code.google.com/p/reform/
+Repository_Link|http://reform.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP DirBuster Project
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_DirBuster_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|CVS
+Repository_Page|http://sourceforge.net/projects/dirbuster/
+Repository_Link|cvs -z3 -d:pserver:anonymous@dirbuster.cvs.sourceforge.net:/cvsroot/dirbuster co -P DirBuster
+===
+===
+Project_Name|OWASP JavaScript Sandboxes
+Project_Page|https://www.owasp.org/index.php/OWASP_JavaScript_Sandboxes
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/jsreg/
+Repository_Link|http://jsreg.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP Scrubbr
+Project_Page|https://www.owasp.org/index.php/Scrubbr
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/owaspscrubbr/
+Repository_Link|http://owaspscrubbr.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP Teachable Static Analysis Workbench Project
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_Teachable_Static_Analysis_Workbench_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/teachablesa/
+Repository_Link|http://teachablesa.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP Sqlibench Project
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_Sqlibench_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/sqlibench/
+Repository_Link|http://sqlibench.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP Sprajax Project
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_Sprajax_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/sprajax/
+Repository_Link|http://sprajax.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP Skavenger Project
+Project_Page|https://www.owasp.org/index.php/Category:OWASP_Skavenger_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|http://sourceforge.net/projects/skavenger/
+Repository_Link|http://svn.code.sf.net/p/skavenger/code/
+Repository_Link|svn://svn.code.sf.net/p/skavenger/code/
+===
+===
+Project_Name|OWASP VFW Project
+Project_Page|https://www.owasp.org/index.php/OWASP_VFW_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/scarpellini/VFW
+Repository_Link|https://github.com/scarpellini/VFW.git
+Repository_Link|git://github.com/scarpellini/VFW.git
+===
+===
+Project_Name|OWASP WAF Project
+Project_Page|https://www.owasp.org/index.php/OWASP_WAF_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/owasp-java-waf/
+Repository_Link|http://owasp-java-waf.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP WSFuzzer Project
+Project_Page|https://www.owasp.org/index.php/Project_Information:template_WSFuzzer_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|http://sourceforge.net/projects/wsfuzzer/
+Repository_Link|http://svn.code.sf.net/p/wsfuzzer/code/trunk
+Repository_Link|svn://svn.code.sf.net/p/wsfuzzer/code/trunk
+===
+===
+Project_Name|OWASP Webslayer Project
+Project_Page|https://www.owasp.org/index.php/Project_Information:template_Webslayer_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/webslayer/
+Repository_Link|http://webslayer.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP Web Browser Testing System Project
+Project_Page|https://www.owasp.org/index.php/OWASP_Web_Browser_Testing_System_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|SVN
+Repository_Page|https://code.google.com/p/wbts/
+Repository_Link|http://wbts.googlecode.com/svn/trunk/
+===
+===
+Project_Name|OWASP Hatkit Datafiddler Project
+Project_Page|https://www.owasp.org/index.php/OWASP_Hatkit_Datafiddler_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|HG
+Repository_Page|https://bitbucket.org/holiman/hatkit-datafiddler/overview
+Repository_Link|https://bitbucket.org/holiman/hatkit-datafiddler
+===
+===
+Project_Name|OWASP Hatkit Proxy Project
+Project_Page|https://www.owasp.org/index.php/OWASP_Hatkit_Proxy_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|HG
+Repository_Page|https://bitbucket.org/holiman/hatkit-proxy/overview
+Repository_Link|https://bitbucket.org/holiman/hatkit-proxy
+===
+===
+Project_Name|OWASP Fiddler Addons for Security Testing Project
+Project_Page|https://www.owasp.org/index.php/OWASP_Fiddler_Addons_for_Security_Testing_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|http://websecuritytool.codeplex.com
+Repository_Link|https://git01.codeplex.com/websecuritytool
+Repository_Status|CURRENT
+Repository_Type|HG
+Repository_Page|http://xss.codeplex.com
+Repository_Link|https://hg.codeplex.com/xss
+===
+===
+Project_Name|OWASP WhatTheFuzz Project
+Project_Page|https://www.owasp.org/index.php/OWASP_WhatTheFuzz_Project#tab=Project_About
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/SecurityInnovation/WhatTheFuzz
+Repository_Link|https://github.com/SecurityInnovation/WhatTheFuzz.git
+Repository_Link|git://github.com/SecurityInnovation/WhatTheFuzz.git
+===
+===
+Project_Name|OWASP WS Amplification DoS Project
+Project_Page|https://www.owasp.org/index.php/OWASP_WS_Amplification_DoS_Project
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/VSSRS/WS-Amplification
+Repository_Link|https://github.com/VSSRS/WS-Amplification.git
+Repository_Link|git://github.com/VSSRS/WS-Amplification.git
+===
+===
+Project_Name|OWASP Periodic Table of Vulnerabilities
+Project_Page|https://www.owasp.org/index.php/OWASP_Periodic_Table_of_Vulnerabilities
+Project_Website|
+Project_Status|INACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/periodictable/periodictable.github.com
+Repository_Link|https://github.com/periodictable/periodictable.github.com.git
+Repository_Link|git://github.com/periodictable/periodictable.github.com.git
+===
+===
+Project_Name|OWASP Pygoat Project
+Project_Page|https://www.owasp.org/index.php/OWASP_Pygoat_Project
+Project_Website|
+Project_Status|ACTIVE
+Repository_Status|CURRENT
+Repository_Type|GIT
+Repository_Page|https://github.com/Kerosive/pygoat
+Repository_Link|https://github.com/Kerosive/pygoat.git
+Repository_Link|git://github.com/Kerosive/pygoat.git
+===
