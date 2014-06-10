@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{{ project_name }} | Metrics</title>
+  </head>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    font-weight: normal;
+    border-collapse: collapse;
+  }
+  a:link, a:visited, a:hover, a:active {
+    color: inherit;
+    text-decoration: inherit;
+  }
+  hr {
+    width: 100%;
+    height: 1px;
+    border-top: solid 1px #aaa;
+  }
+  .top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;  
+    width: 100%;
+    height: auto;
+    background-color: #333;
+    color: #fff;
+  }
+  .top-bar h1 {
+    float: left;
+    padding: 0.25em;
+    font-size: 1.3em;
+  }
+  .top-bar nav {
+    float: right;
+    padding: 0.25em;
+  }
+  .top-bar nav ul {
+    list-style: none;
+  }
+  .top-bar nav ul li {
+    float: left;
+    padding: 0.25em;
+    width: 5em;
+    text-align: center;
+  }
+  /* page */
+  .page {
+    /* position: relative; */
+    min-height: 100%;
+    padding: 4em 2em 0 2em;
+  }
+  .page table {
+    margin-top: 0.5em;
+    border: solid 1px #ccc;
+    padding: 0.5em;
+  }
+  .page table thead tr {
+    background-color: #eee;
+  }
+  .page table td,
+  .page table th {
+    padding: 0.5em;
+  }
+  .page table th {
+    font-weight: bolder;
+  }
+  .page table tbody th {
+    text-align: left;
+  }
+  .page table tbody tr:nth-child(2n) {
+    background-color: #f9f9f9;
+  }
+  /* page's sections */
+  .page > section {
+    float: left;
+    width: auto;
+    padding: 1em;
+  }
+  .page > section > h1 {
+    font-size: 2em;
+  }
+  /* footer */
+  .page > footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  .page > footer ul {
+    list-style: none;
+  }
+  .page > footer ul li {
+    float: left;
+    padding: 0.5em;
+  }
+  </style>
+  <style>
+  {% block style %}
+  {% endblock %}
+  </style>
+  <body>
+    <header class="top-bar">
+      <h1><a href="index.html">{{ project_name }}</a></h1>
+      <nav>
+        <ul>
+          <li><a href="activity.html">activity</a></li>
+          <li><a href="files.html">files</a></li>
+          <li><a href="authors.html">authors</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="page">
+      {% block page %}
+      {% endblock %}
+    </div>
+  </body>
+</html>

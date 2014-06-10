@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block page %}
+      <section id="weekly_act">
+        <h1>Contributors</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Commits</th>
+              <th>+ lines</th>
+              <th>- lines</th>
+              <th>First Commit</th>
+              <th>Last Commit</th>
+              <th>Age</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for author in authors %}
+            <tr>
+              <td>{{ loop.index }}</td>
+              <td>{{ author.name }}</td>
+              <td>{{ author.commits }}</td>
+              <td>{{ author.add }}</td>
+              <td>{{ author.rm }}</td>
+              <td>{{ author.first.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+              <td>{{ author.last.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+              <td>{{ ((author.last - author.first).total_seconds() // (60 * 60 * 24)) | int }} days</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+      <section id="longest_com">
+        <h1>Longest Commit Messages</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Hash</th>
+              <th>Author</th>
+              <th>Length</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for commit in commits | commits_longest_10text %}
+            <tr>
+              <td>{{ loop.index }}</td>
+              <td>{{ commit.hash[:7] }}</td>
+              <td>{{ commit.author_name }}</td>
+              <td>{{ commit.body | length }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+{% endblock %}

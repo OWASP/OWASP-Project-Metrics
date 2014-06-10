@@ -1,0 +1,4 @@
+docopt
+namedlist
+jinja2
+

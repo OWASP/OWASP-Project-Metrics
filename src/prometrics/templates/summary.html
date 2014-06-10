@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+
+{% block page %}
+      <section id="summary">
+        <h1>Summary</h1>
+        <table>
+          <tbody>
+            <tr>
+              <th>Project Name</th>
+              <td>{{ project_name }}</td>
+            </tr>
+            <tr>
+              <th>Repository Name</th>
+              <td>{{ repository_name }}</td>
+            </tr>
+            <tr>
+              <th>DVCS</th>
+              <td>Git</td>
+            </tr>
+            <tr>
+              <th>Report Period</th>
+              <td>from {{ master.commits[0].commiter_date.strftime('%Y-%m-%d') }}
+                  to {{ NOW.strftime('%Y-%m-%d') }}</td>
+            </tr>
+            <tr>
+              {% set age = (NOW - master.commits[0].commiter_date).total_seconds() // (60 * 60 * 24) %}
+              <th>Age</th>
+              <td>{{ age | int }} days</td>
+            </tr>
+            <tr>
+              <th>Active days</th>
+              <td>{{ age - inactive_days | int }}</td>
+            </tr>
+            <tr>
+              <th>Total Commits</th>
+              <td>{{ master.commits | length }}</td>
+            </tr>
+            <tr>
+              <th>Commits per Day</th>
+              <td>{{ '%.2f' % ((master.commits | length) / age) }} commits per day</td>
+            </tr>
+            <tr>
+              <th>Main Language</th>
+              <td>{{ (languages | dictsort(False, 'value'))[-1][0] }}</td>
+            </tr>
+            <tr>
+              <th>Branches</th>
+              <td>{{ branches.iterkeys() | join(', ') }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="commits">
+        <h1>Commits</h1>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>All time</th>
+              <th>Last 6 months</th>
+              <th>Last 3 months</th>
+              <th>Last month</th>
+              <th>Last week</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Commits</th>
+              <td>{{ master.commits | length }}</td>
+              <td>{{ master.commits | commits_last_6months }}</td>
+              <td>{{ master.commits | commits_last_3months }}</td>
+              <td>{{ master.commits | commits_last_month }}</td>
+              <td>{{ master.commits | commits_last_week }}</td>
+            </tr>
+            <tr>
+              <th>Contributors</th>
+              <td>{{ master.commiters | length }}</td>
+              <td>{{ master.commits | commiters_last_6months }}</td>
+              <td>{{ master.commits | commiters_last_3months }}</td>
+              <td>{{ master.commits | commiters_last_month }}</td>
+              <td>{{ master.commits | commiters_last_week }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="contributors">
+        <h1>Contributors (Top 5)</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Commits</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% set tot = master.commits | length %}
+            {% for count, name  in master.commiters | top_5commiters %}
+            <tr>
+              <td>{{ loop.index }}</td>
+              <td>{{ name }}</td>
+              <td>{{ count }} ({{ '%.2f' % ((count | float) / tot * 100) }}%)</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+      <section id="languages">
+        <h1>Languages</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Language</th>
+              <th>Files</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% set tot = languages.itervalues() | sum %}
+            {% for lang, count in languages | dictsort(False, 'value') | reverse %}
+              {% if lang %}
+            <tr>
+              <td>{{ loop.index }}</td>
+              <td>{{ lang }}</td>
+              <td>{{ count }} ({{ '%.2f' % ((count | float) / tot * 100) }}%)</td>
+            </tr>
+              {% endif %}
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+{% endblock %}

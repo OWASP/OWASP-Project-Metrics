@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block style %}
+.center {
+  text-align: center;
+}
+{% endblock %}
+
+{% block page %}
+      <section id="weekly_act">
+        <h1>Files</h1>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>All time</th>
+              <th>Last 6 months</th>
+              <th>Last 3 months</th>
+              <th>Last month</th>
+              <th>Last week</th>
+            </tr>
+          </thead>
+          <tbody class="center">
+            <tr>
+              <th>Files Added</th>
+              <td>{{ add_stats.total }}</td>
+              <td>{{ add_stats.week }}</td>
+              <td>{{ add_stats.month }}</td>
+              <td>{{ add_stats.months3 }}</td>
+              <td>{{ add_stats.months6 }}</td>
+            </tr>
+            <tr>
+              <th>Files Modified</th>
+              <td>{{ mod_stats.total }}</td>
+              <td>{{ mod_stats.week }}</td>
+              <td>{{ mod_stats.month }}</td>
+              <td>{{ mod_stats.months3 }}</td>
+              <td>{{ mod_stats.months6 }}</td>
+            </tr>
+            <tr>
+              <th>Files deleted</th>
+              <td>{{ del_stats.total }}</td>
+              <td>{{ del_stats.week }}</td>
+              <td>{{ del_stats.month }}</td>
+              <td>{{ del_stats.months3 }}</td>
+              <td>{{ del_stats.months6 }}</td>
+            </tr>
+          </tbody>
+          </tbody>
+        </table>
+      </section>
+      <section id="weekly_act">
+        <h1>Files for Commits</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Commit</th>
+              <th>Date</th>
+              <th>Commiter</th>
+              <th>Added</th>
+              <th>Modified</th>
+              <th>Deleted</th>
+              <th>Renamed</th>
+              <th>Copied</th>
+              <th>Changed Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for commit in commits %}
+              {% set stats = c2s[commit.hash] %}
+              {% if stats | sum %}
+            <tr>
+              <td>{{ commit.hash[:7] }}</td>
+              <td>{{ commit.commiter_date.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+              <td>{{ commit.commiter_name }}</td>
+              <td class="center">{{ stats.add or '' }}</td>
+              <td class="center">{{ stats.mod or '' }}</td>
+              <td class="center">{{ stats.rm or '' }}</td>
+              <td class="center">{{ stats.rename or '' }}</td>
+              <td class="center">{{ stats.copy or '' }}</td>
+              <td class="center">{{ stats.change or '' }}</td>
+            </tr>
+              {% endif %}
+            {% endfor %}
+          </tbody>
+          </tbody>
+        </table>
+      </section>
+{% endblock %}
