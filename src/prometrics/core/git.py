@@ -69,7 +69,33 @@ def git_cmd(git, path, *args):
 class Git(object):
 
     def __init__(self, path, git='git'):
-        self.git = partial(git_cmd, str(git), os.path.abspath(path))
-        # test the repository
-        self.git('log')
+        self.git_out = partial(git_cmd, str(git), os.path.abspath(path))
+        def git_ignore_out(*args):
+            for _ in self.git_out(*args):
+                pass
+        self.git_cmd = git_ignore_out
 
+    @property
+    def branch(self):
+        for line in self.git_out('branch', '--list', '--all'):
+            if line[0] == '*':
+                line = line.lstrip('* ').rstrip()
+                return line.rpartition(' -> ')[2].rpartition('/')[2]
+        return None
+
+    @branch.setter
+    def branch(self, name):
+        if name not in self.branches():
+             raise GitError("unknown branch: %r" % name)
+        self.git_cmd('checkout', name)
+
+    def branches(self):
+        bs = set()
+        for line in self.git_out('branch', '--list', '--all'):
+            line = line.lstrip('* ').rstrip()
+            if ' -> ' in line:
+                continue
+            _, _, bname = line.rpartition('/')
+            bs.add(bname)
+        return bs
+                
