@@ -13,12 +13,17 @@
 #    You should have received a copy of the GNU General Public License
 #    along with OWASP Project Metrics.  If not, see <http://www.gnu.org/licenses/>.
 """Class to represent a Git Repository"""
+from collections import namedtuple
+from functools import partial
 import os.path
 import subprocess as subp
-from functools import partial
 
 
 class GitError(Exception):
+    pass
+
+
+class GitFormatError(GitError):
     pass
 
 
@@ -66,6 +71,16 @@ def git_cmd(git, path, *args):
             raise GitCmdError(p.returncode, stderr)
 
 
+Commit = namedtuple('Commit', ('hash', 'tree', 'parent',
+                    'author_name', 'author_email', 'author_date',
+                    'commiter_name', 'commiter_email', 'commiter_date',
+                    'subject', 'text'))
+
+
+IN_INFO = 1
+IN_DATA = 2
+
+
 class Git(object):
 
     def __init__(self, path, git='git'):
@@ -98,4 +113,27 @@ class Git(object):
             _, _, bname = line.rpartition('/')
             bs.add(bname)
         return bs
-                
+
+    def commits(self):
+        in_data = 0
+        fields = None
+        text = []
+        for line in self.git_out('log', '-B', '-M20', '-C', '-l9999','--find-copies-harder',
+                                 '--pretty=format:%x00%H%x00%T%x00%P%x00%an%x00%ae%x00%ai%x00%cn%x00%ce%x00%ci%x00%s%x00',
+                                 '--pickaxe-all', '--summary'):
+            if in_data:
+                if line.startswith('\0'):
+                    yield Commit(*(tuple(fields[1:-1]) + ('\n'.join(text),)))
+                    fields = None
+                    text = []
+                    in_data = 0
+                else:
+                    text.append(line)
+            if not in_data:
+                fields = line.split('\x00')
+                if len(fields) != 12:
+                    raise GitFormatError("invalid line %r" % line)
+                in_data = 1
+        if fields and text:
+            yield Commit(*(tuple(fields[1:-1]) + ('\n'.join(text),)))
+
