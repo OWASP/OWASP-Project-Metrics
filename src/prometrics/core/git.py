@@ -19,6 +19,9 @@ import os.path
 import subprocess as subp
 
 
+NULL_HASH = '0' * 40
+
+
 class GitError(Exception):
     pass
 
@@ -136,4 +139,8 @@ class Git(object):
                 in_data = 1
         if fields and text:
             yield Commit(*(tuple(fields[1:-1]) + ('\n'.join(text),)))
+
+    def short2long_hash(self, short):
+        return NULL_HASH if len(short) >= 10 and all(ch == '0' for ch in short) \
+               else self.git_out('rev-parse', '--verify', short).next().strip()
 
