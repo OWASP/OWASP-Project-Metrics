@@ -74,12 +74,26 @@ def git_cmd(git, path, *args):
             raise GitCmdError(p.returncode, stderr)
 
 
+def rename2files(rename):
+    oc_pos = rename.find('{')
+    cc_pos = rename.find('}')
+    ar_pos = rename.find(' => ')
+    if oc_pos >= 0 and cc_pos > oc_pos and (oc_pos < ar_pos < cc_pos):
+        prefix = rename[:oc_pos]
+        postfix = rename[cc_pos + 1:]
+        src, _, dst = rename.partition(' => ')
+        return src, dst
+    return rename, rename
+
+
 Commit = namedtuple('Commit', ('hash', 'tree', 'parent',
                     'author_name', 'author_email', 'author_date',
                     'commiter_name', 'commiter_email', 'commiter_date',
                     'subject', 'text'))
 
 Change = namedtuple('Change', ('commit', 'src_mode', 'src_hash', 'dst_mode', 'dst_hash', 'status', 'percentage', 'src_file', 'dst_file'))
+
+Stat = namedtuple('Stat', ('commit', 'add', 'rm', 'src_file', 'dst_file'))
 
 
 IN_INFO = 1
@@ -171,4 +185,17 @@ class Git(object):
                 else:
                     src_file, _, dst_file = finfo.partition('\t')
                 yield Change(commit, src_mode, src_hash, dst_mode, dst_hash, status, perc, src_file, dst_file)
+
+    def stats(self):
+        for line in self.git_out('log', '-B', '-M20', '-C', '-l9999', '--numstat',
+                                 '--find-copies-harder', '--pickaxe-all',
+                                 '-r', '--pretty=format:%x00%H%x00'):
+            if not line:
+                continue
+            if line.startswith('\0'):
+                commit = line.split('\0')[1]
+            else:
+                add, rm, fname = line.split('\t')
+                src, dst = rename2files(fname)
+                yield commit, src, dst, add, rm
 
