@@ -79,6 +79,8 @@ Commit = namedtuple('Commit', ('hash', 'tree', 'parent',
                     'commiter_name', 'commiter_email', 'commiter_date',
                     'subject', 'text'))
 
+Change = namedtuple('Change', ('commit', 'src_mode', 'src_hash', 'dst_mode', 'dst_hash', 'status', 'percentage', 'src_file', 'dst_file'))
+
 
 IN_INFO = 1
 IN_DATA = 2
@@ -141,6 +143,32 @@ class Git(object):
             yield Commit(*(tuple(fields[1:-1]) + ('\n'.join(text),)))
 
     def short2long_hash(self, short):
-        return NULL_HASH if len(short) >= 10 and all(ch == '0' for ch in short) \
+        return NULL_HASH if len(short) >= 7 and all(ch == '0' for ch in short) \
                else self.git_out('rev-parse', '--verify', short).next().strip()
+
+    def changes(self):
+        in_data = 0
+        for line in self.git_out('whatchanged', '-B', '-M20', '-C', '-l9999',
+                                 '--find-copies-harder', '--pickaxe-all',
+                                 '-r', '--pretty=format:%x00%H%x00'):
+            if not line:
+                continue
+            if line.startswith('\0'):
+                commit = line.split('\0')[1]
+            else:
+                src_mode, dst_mode, src_hash, dst_hash, finfo = line.split(' ')
+                src_hash = self.short2long_hash(src_hash.rstrip('.'))
+                dst_hash = self.short2long_hash(dst_hash.rstrip('.'))
+                status, _, files = finfo.partition('\t')
+                status = status[0]
+                perc = status[1:] or None
+                if src_hash == NULL_HASH:
+                    src_file = None
+                    dst_file = finfo
+                elif dst_hash == NULL_HASH:
+                    src_file = finfo
+                    dst_file = None
+                else:
+                    src_file, _, dst_file = finfo.partition('\t')
+                yield Change(commit, src_mode, src_hash, dst_mode, dst_hash, status, perc, src_file, dst_file)
 
