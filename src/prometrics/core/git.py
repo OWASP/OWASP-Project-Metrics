@@ -117,13 +117,17 @@ Commit = namedtuple('Commit', ('hash', 'tree', 'parent',
                     'commiter_name', 'commiter_email', 'commiter_date',
                     'subject', 'text'))
 
-Change = namedtuple('Change', ('commit', 'src_mode', 'src_hash', 'dst_mode', 'dst_hash', 'status', 'percentage', 'src_file', 'dst_file'))
+Change = namedtuple('Change', ('commit', 'src_mode', 'src_hash', 'dst_mode',
+                    'dst_hash', 'status', 'percentage', 'src_file', 'dst_file'))
 
 Stat = namedtuple('Stat', ('commit', 'add', 'rm', 'src_file', 'dst_file'))
+
+Blob = namedtuple('Blob', ('hash', 'mode', 'name'))
 
 
 IN_INFO = 1
 IN_DATA = 2
+
 
 
 class Git(object):
@@ -236,4 +240,15 @@ class Git(object):
     def trees(self):
         for line in self.git_out('rev-list', '--all'):
             yield line.strip()
+
+
+    def blobs(self, tree):
+        if tree not in tuple(self.trees):
+            raise GitError("unknown tree %r" % tree)
+        for line in self.git_out('ls-tree', '-r', tree):
+            fields = line.split(' ')
+            mode, otype = fields[:2]
+            ohash, oname = ' '.join(fields[2:]).split('\t')
+            if otype == 'blob':
+                yield Blob(ohash, mode, oname)
 
