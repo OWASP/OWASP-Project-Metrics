@@ -232,3 +232,8 @@ class Git(object):
                 src, dst = rename2files(fname)
                 yield commit, src, dst, add, rm
 
+    @property
+    def trees(self):
+        for line in self.git_out('rev-list', '--all'):
+            yield line.strip()
+
