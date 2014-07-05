@@ -17,6 +17,7 @@ from collections import namedtuple
 from functools import partial
 import os.path
 import subprocess as subp
+import tempfile
 
 
 NULL_HASH = '0' * 40
@@ -46,6 +47,31 @@ __all__ = 'Git',
 
 BUFSIZE = 4096
 EOL = '\n'
+
+
+def clone(git, repo, out):
+    p = subp.Popen((git, 'clone', repo, out), stdout=subp.PIPE, stderr=subp.PIPE)
+    buf = p.stdout.read(BUFSIZE)
+    eol_len = len(EOL)
+    try:
+        while buf:
+            eol = buf.find(EOL)
+            if eol < 0:
+                _buf = p.stdout.read(BUFSIZE)
+                if not buf:
+                    yield buf
+                    raise StopIteration
+                buf = '%s%s' % (buf, _buf)
+                del _buf
+            else:
+                yield buf[:eol]
+                buf = buf[eol + eol_len:]
+                if not buf:
+                    buf = p.stdout.read(BUFSIZE)
+    finally:
+        _, stderr = p.communicate()
+        if p.returncode:
+            raise GitCmdError(p.returncode, stderr)
 
 
 def git_cmd(git, path, *args):
@@ -108,6 +134,13 @@ class Git(object):
             for _ in self.git_out(*args):
                 pass
         self.git_cmd = git_ignore_out
+
+    @staticmethod
+    def clone(path, out='./', git='git'):
+        out = os.path.abspath(out)
+        for line in clone(git, path, out):
+            pass
+        return Git(os.path.join(out, '.git'))        
 
     @property
     def branch(self):
