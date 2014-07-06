@@ -15,12 +15,23 @@
 """Class to represent a Git Repository"""
 from collections import namedtuple
 from functools import partial
+import hashlib
 import os.path
 import subprocess as subp
 import tempfile
 
 
 NULL_HASH = '0' * 40
+
+
+STATUS_ADD = 'A'
+STATUS_COPY = 'C'
+STATUS_DELETE = 'D'
+STATUS_MODIFICATION = 'M'
+STATUS_RENAME = 'R'
+STATUS_CHANGE_TYPE = 'T'
+STATUS_UNMERGED = 'U'
+STATUS_UNKNOWN = 'X'
 
 
 class GitError(Exception):
@@ -84,7 +95,7 @@ def git_cmd(git, path, *args):
             eol = buf.find(EOL)
             if eol < 0:
                 _buf = p.stdout.read(BUFSIZE)
-                if not buf:
+                if not _buf:
                     yield buf
                     raise StopIteration
                 buf = '%s%s' % (buf, _buf)
@@ -124,10 +135,11 @@ Stat = namedtuple('Stat', ('commit', 'add', 'rm', 'src_file', 'dst_file'))
 
 Blob = namedtuple('Blob', ('hash', 'mode', 'name'))
 
+Object = namedtuple('Object', ('id', 'lines', 'sha1', 'sha256', 'sha512', 'raw'))
+
 
 IN_INFO = 1
 IN_DATA = 2
-
 
 
 class Git(object):
@@ -213,15 +225,20 @@ class Git(object):
                 status, _, files = finfo.partition('\t')
                 status = status[0]
                 perc = status[1:] or None
-                if src_hash == NULL_HASH:
+                #
+                if status == STATUS_ADD:
                     src_file = None
-                    dst_file = finfo
-                elif dst_hash == NULL_HASH:
-                    src_file = finfo
+                    dst_file = files
+                elif status == STATUS_DELETE:
+                    src_file = files
                     dst_file = None
+                elif status in (STATUS_MODIFICATION, STATUS_CHANGE_TYPE):
+                    src_file = dst_file = files
+                elif status in (STATUS_RENAME, STATUS_COPY, STATUS_UNMERGED):
+                    src_file, dst_file = files.split('\t')
                 else:
-                    src_file, _, dst_file = finfo.partition('\t')
-                yield Change(commit, src_mode, src_hash, dst_mode, dst_hash, status, perc, src_file, dst_file)
+                    continue
+                yield Change(commit, src_mode.lstrip(':'), src_hash, dst_mode.lstrip(':'), dst_hash, status, perc, src_file, dst_file)
 
     def stats(self):
         for line in self.git_out('log', '-B', '-M20', '-C', '-l9999', '--numstat',
@@ -251,4 +268,20 @@ class Git(object):
             ohash, oname = ' '.join(fields[2:]).split('\t')
             if otype == 'blob':
                 yield Blob(ohash, mode, oname)
+
+    def object(self, commit, file, out=None):
+        lines = 0
+        sha1 = hashlib.sha1()
+        sha256 = hashlib.sha256()
+        sha512 = hashlib.sha512()
+        for line in self.git_out('show', '%s:%s' % (commit, file)):
+            lines += 1
+            line = '%s%s' % (line, EOL)
+            if out:
+                out.write(line)
+            sha1.update(line)
+            sha256.update(line)
+            sha512.update(line)
+        obj_id = hashlib.sha1('%s_%s' % (commit, file)).digest()
+        return Object(obj_id, lines, sha1.digest(), sha256.digest(), sha512.digest(), out)
 
