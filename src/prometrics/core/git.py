@@ -14,6 +14,7 @@
 #    along with OWASP Project Metrics.  If not, see <http://www.gnu.org/licenses/>.
 """Class to represent a Git Repository"""
 from collections import namedtuple
+from datetime import datetime, tzinfo
 from functools import partial
 import hashlib
 import os.path
@@ -199,6 +200,12 @@ class Git(object):
                     text.append(line)
             if not in_data:
                 fields = line.split('\x00')
+                dt, _, tz = fields[6].rpartition(' ')
+                # TODO set timezone
+                fields[6] = datetime.strptime(dt, '%Y-%m-%d %H:%M:%S')
+                dt, _, tz = fields[9].rpartition(' ')
+                # TODO set timezone
+                fields[9] = datetime.strptime(dt, '%Y-%m-%d %H:%M:%S')
                 if len(fields) != 12:
                     raise GitFormatError("invalid line %r" % line)
                 in_data = 1
