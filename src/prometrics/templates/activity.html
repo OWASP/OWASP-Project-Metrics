@@ -1,146 +1,111 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
-{% block style %}
-td {
-  text-align: center;
-}
-{% endblock %}
+{% block title %}Activity{% endblock %}
 
 {% block page %}
-      <section id="weekly_act">
-        <h1>Weekly Activity</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>weeks ago</th>
-              {% for c in weekly_commits[:24] %}
-              <th>{{ loop.revindex }}</th>
-              {% endfor %}
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>commits</th>
-              {% for commits in weekly_commits | reverse %}
-              <td>{{ commits }}</td>
-              {% endfor %}
-            </tr>
-          </tbody>
-        </table>
-      </section>
-      <section id="hourly_act">
-        <h1>Hourly Activity</h1>
-        <table>
-          <thead>
-            <tr>
-              <th></th>
-              {% for _ in hourly_commits %}
-              <th>{{ loop.index0 }}</th>
-              {% endfor %}
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>commits</th>
-              {% for commits in hourly_commits %}
-              <td>{{ commits }}</td>
-              {% endfor %}
-            </tr>
-          </tbody>
-        </table>
-      </section>
-      <section id="weekday_act">
-        <h1>Day of Week</h1>
-        <table>
-          <thead>
-            <tr>
-              <th></th>
-              <th>Monday</th>
-              <th>Tuesday</th>
-              <th>Wednesday</th>
-              <th>Thursday</th>
-              <th>Friday</th>
-              <th>Saturday</th>
-              <th>Sunday</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>commits</th>
-              {% for commits in weekday_commits %}
-              <td>{{ commits }}</td>
-              {% endfor %}
-            </tr>
-          </tbody>
-        </table>
-      </section>
-      <section id="hour_week_act">
-        <h1>Hour of Week</h1>
-        <table>
-          <thead>
-            <tr>
-              <th></th>
-              <th>0</th>
-              <th>1</th>
-              <th>2</th>
-              <th>3</th>
-              <th>4</th>
-              <th>5</th>
-              <th>6</th>
-              <th>7</th>
-              <th>8</th>
-              <th>9</th>
-              <th>10</th>
-              <th>11</th>
-              <th>12</th>
-              <th>13</th>
-              <th>14</th>
-              <th>15</th>
-              <th>16</th>
-              <th>17</th>
-              <th>18</th>
-              <th>19</th>
-              <th>20</th>
-              <th>21</th>
-              <th>22</th>
-              <th>23</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% macro hour_week_row(hwc, weekday) -%}
-              {% for commits in hwc[weekday] %}
-              <td>{% if commits %}{{ commits }}{% endif %}</td>
-              {% endfor %}
-            {%- endmacro %}
-            <tr>
-              <th>Monday</th>
-              {{ hour_week_row(hour_week_commits, 0) }}
-            </tr>
-            <tr>
-              <th>Tuesday</th>
-              {{ hour_week_row(hour_week_commits, 1) }}
-            </tr>
-            <tr>
-              <th>Wednesday</th>
-              {{ hour_week_row(hour_week_commits, 2) }}
-            </tr>
-            <tr>
-              <th>Thursday</th>
-              {{ hour_week_row(hour_week_commits, 3) }}
-            </tr>
-            <tr>
-              <th>Friday</th>
-              {{ hour_week_row(hour_week_commits, 4) }}
-            </tr>
-            <tr>
-              <th>Saturday</th>
-              {{ hour_week_row(hour_week_commits, 5) }}
-            </tr>
-            <tr>
-              <th>Sunday</th>
-              {{ hour_week_row(hour_week_commits, 6) }}
-            </tr>
-          </tbody>
-        </table>
-      </section>
+<article>
+  <h1>Weekly Activity</h1>
+  <table>
+    <thead>
+      <th>weeks ago</th>
+      {% for _ in weeks %}
+      <th>{{ loop.index }}</th>
+      {% endfor %}
+    </thead>
+    <tbody>
+      <tr>
+        <th>commits</th>
+        {% for qt in weeks %}
+        <td>{{ qt }}</td>
+        {% endfor %}
+      </tr>
+      <tr>
+        <th>%</th>
+        {% for qt in weeks %}
+        <td>{{ '%.2f' % (qt * 100.0 / commits.__len__()) }}</td>
+        {% endfor %}
+      </tr>
+    </tbody>
+  </table>
+</article>
+<article>
+  <h1>Hour of Day</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>hour</th>
+        {% for _ in hours %}
+        <th>{{ loop.index0 }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>commits</th>
+        {% for qt in hours %}
+        <td>{{ qt }}</td>
+        {% endfor %}
+      </tr>
+      <tr>
+        <th>commits</th>
+        {% for qt in hours %}
+        <td>{{ '%.2f' % (qt * 100.0 / commits.__len__()) }}</td>
+        {% endfor %}
+      </tr>
+    </tbody>
+  </table>
+</article>
+<article>
+  <h1>Day of Week</h1>
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+        <th>Saturday</th>
+        <th>Sunday</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>commits</th>
+        {% for qt in week_days %}
+        <td>{{ qt }}</td>
+        {% endfor %}
+      </tr>
+      <tr>
+        <th>%</th>
+        {% for qt in week_days %}
+        <td>{{ '%.2f' % (qt * 100.0 / commits.__len__()) }}</td>
+        {% endfor %}
+      </tr>
+    </tbody>
+  </table>
+</article>
+<article>
+  <h1>Hour of Week</h1>
+  <table>
+    <thead>
+      <th></th>
+      {% for _ in week_hours[0] %}
+      <th>{{ loop.index0 }}</th>
+      {% endfor %}
+    </thead>
+    <tbody>
+      {% set DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] %}
+      {% for day in week_hours %}
+      <tr>
+        <th>{{ DAYS[loop.index0] }}</th>
+        {% for qt in day %}
+        <td>{{ qt or '' }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</article>
 {% endblock %}

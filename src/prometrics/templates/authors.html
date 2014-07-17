@@ -1,58 +1,83 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+
+{% block title %}Contributors{% endblock %}
 
 {% block page %}
-      <section id="weekly_act">
-        <h1>Contributors</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Commits</th>
-              <th>+ lines</th>
-              <th>- lines</th>
-              <th>First Commit</th>
-              <th>Last Commit</th>
-              <th>Age</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for author in authors %}
-            <tr>
-              <td>{{ loop.index }}</td>
-              <td>{{ author.name }}</td>
-              <td>{{ author.commits }}</td>
-              <td>{{ author.add }}</td>
-              <td>{{ author.rm }}</td>
-              <td>{{ author.first.strftime('%Y-%m-%d %H:%M:%S') }}</td>
-              <td>{{ author.last.strftime('%Y-%m-%d %H:%M:%S') }}</td>
-              <td>{{ ((author.last - author.first).total_seconds() // (60 * 60 * 24)) | int }} days</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </section>
-      <section id="longest_com">
-        <h1>Longest Commit Messages</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Hash</th>
-              <th>Author</th>
-              <th>Length</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for commit in commits | commits_longest_10text %}
-            <tr>
-              <td>{{ loop.index }}</td>
-              <td>{{ commit.hash[:7] }}</td>
-              <td>{{ commit.author_name }}</td>
-              <td>{{ commit.body | length }}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </section>
+<article>
+  <h1>Contributors</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name (email)</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for email, (count, name, cms) in authors.iteritems() %}
+      <tr>
+        <th>{{ loop.index }}</th>
+        <td>{{ name }} ({{ email }})</td>
+        <th> </th>
+        <td></td>
+        <th></th>
+        <td></td>
+        <th></th>
+        <td></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</article>
+<article>
+  <h1>Longest commit messages</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Commit</th>
+        <th>Author</th>
+        <th>Length</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for cm in sort_by_text_len(commits)[:10] %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ cm.hash[:8] }}</td>
+        <td>{{ cm.auth_name }}</td>
+        <td>{{ cm.text | length }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</article>
+<article>
+  <h1>Most Commits in One Day</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Commit</th>
+        <th>Author</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for no, email, date in (commits_per_day | sort(reverse=1))[:10] %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ no }}</td>
+        <td>{{ authors[email][1] }}</td>
+        <td>{{ date.strftime(DATE_FMT) }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</article>
 {% endblock %}

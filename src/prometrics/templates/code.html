@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block title %}Code{% endblock %}
+
+{% block page %}
+<article>
+  <h1>Files</h1>
+  <table>
+    <tbody>
+      <tr>
+        <th>Total files</th>
+        <td>{{ files | length }}</td>
+      </tr>
+      <tr>
+        <th>Total lines</th>
+        <td>{{ tot_add - tot_rm }}</td>
+      </tr>
+      <tr>
+        <th>Add</th>
+        <td>{{ tot_add }}</td>
+      </tr>
+      <tr>
+        <th>Remove</th>
+        <td>{{ tot_rm }}</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+<article>
+  <h1>Extensions</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Extension</th>
+        <th>Files (%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for ext, count in exts.iteritems()  %}
+      <tr>
+        <td>{{ ext }}</td>
+        <td>{{ count }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</article>
+<article>
+  <h1>Files per commits</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Commit</th>
+        <th>Date</th>
+        <th>Author</th>
+        <th>+</th>
+        <th>-</th>
+        <th>Added</th>
+        <th>Modified</th>
+        <th>Deleted</th>
+        <th>Renamed</th>
+        <th>Copied</th>
+        <th>Changed Type</th>
+        <th>Unmeged</th>
+        <th>Unknown</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for commit in commits %}
+        {% set sts = stats[commit.hash] %}
+        {% set chs = changes[commit.hash] %}
+      <tr>
+        <td>{{ commit.hash[:7] }}</td>
+        <td>{{ commit.author_date.strftime(DATE_FMT) }}</td>
+        <td>{{ commit.author_name }}</td>
+        <td class="center">{{ sts | sum(attribute='add') }}</td>
+        <td class="center">{{ sts | sum(attribute='rm') }}</td>
+        <td class="center">{{ filter_attr(chs, 'status', 'A') | list | length }}</td>
+        <td class="center">{{ filter_attr(chs, 'status', 'M') | list | length }}</td>
+        <td class="center">{{ filter_attr(chs, 'status', 'D') | list | length }}</td>
+        <td class="center">{{ filter_attr(chs, 'status', 'R') | list | length }}</td>
+        <td class="center">{{ filter_attr(chs, 'status', 'C') | list | length }}</td>
+        <td class="center">{{ filter_attr(chs, 'status', 'T') | list | length }}</td>
+        <td class="center">{{ filter_attr(chs, 'status', 'U') | list | length }}</td>
+        <td class="center">{{ filter_attr(chs, 'status', 'X') | list | length }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+    </tbody>
+  </table>
+</article>
+{% endblock %}
