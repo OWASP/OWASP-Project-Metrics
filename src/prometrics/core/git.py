@@ -1,4 +1,4 @@
-# This file is part of Foobar.
+# This file is part of WASP Project Metrics.
 #
 #    OWASP Project Metrics is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -97,11 +97,13 @@ def git_cmd(git, path, *args):
             if eol < 0:
                 _buf = p.stdout.read(BUFSIZE)
                 if not _buf:
+                    # print repr(buf)
                     yield buf
                     raise StopIteration
                 buf = '%s%s' % (buf, _buf)
                 del _buf
             else:
+                # print repr(buf[:eol])
                 yield buf[:eol]
                 buf = buf[eol + eol_len:]
                 if not buf:
@@ -132,9 +134,9 @@ Commit = namedtuple('Commit', ('hash', 'tree', 'parent',
 Change = namedtuple('Change', ('commit', 'src_mode', 'src_hash', 'dst_mode',
                     'dst_hash', 'status', 'percentage', 'src_file', 'dst_file'))
 
-Stat = namedtuple('Stat', ('commit', 'add', 'rm', 'src_file', 'dst_file'))
+Stat = namedtuple('Stat', ('commit', 'src_file', 'dst_file', 'add', 'rm'))
 
-Blob = namedtuple('Blob', ('hash', 'mode', 'name'))
+File = namedtuple('File', ('hash', 'mode', 'name', 'type'))
 
 Object = namedtuple('Object', ('id', 'lines', 'sha1', 'sha256', 'sha512', 'raw'))
 
@@ -157,7 +159,7 @@ class Git(object):
         out = os.path.abspath(out)
         for line in clone(git, path, out):
             pass
-        return Git(os.path.join(out, '.git'))        
+        return Git(os.path.join(out, '.git'))
 
     @property
     def branch(self):
@@ -226,7 +228,9 @@ class Git(object):
             if line.startswith('\0'):
                 commit = line.split('\0')[1]
             else:
-                src_mode, dst_mode, src_hash, dst_hash, finfo = line.split(' ')
+                fields = line.split(' ')
+                src_mode, dst_mode, src_hash, dst_hash = fields[:4]
+                finfo = ' '.join(fields)
                 src_hash = self.short2long_hash(src_hash.rstrip('.'))
                 dst_hash = self.short2long_hash(dst_hash.rstrip('.'))
                 status, _, files = finfo.partition('\t')
@@ -258,23 +262,29 @@ class Git(object):
             else:
                 add, rm, fname = line.split('\t')
                 src, dst = rename2files(fname)
-                yield commit, src, dst, add, rm
+                yield Stat(commit, src, dst,
+                           int(add) if add.isdigit() else 0,
+                           int(rm) if rm.isdigit() else 0)
 
     @property
     def trees(self):
         for line in self.git_out('rev-list', '--all'):
             yield line.strip()
 
-
-    def blobs(self, tree):
-        if tree not in tuple(self.trees):
-            raise GitError("unknown tree %r" % tree)
-        for line in self.git_out('ls-tree', '-r', tree):
+    def files(self, where=None):
+        for line in self.git_out('ls-tree', '-r', self.branch if where is None else str(where)):
             fields = line.split(' ')
             mode, otype = fields[:2]
             ohash, oname = ' '.join(fields[2:]).split('\t')
-            if otype == 'blob':
-                yield Blob(ohash, mode, oname)
+            yield File(ohash, mode, oname, otype)
+
+    def blobs(self, tree):
+        tree = str(tree)
+        if tree not in tuple(self.trees):
+            raise GitError("unknown tree %r" % tree)
+        for f in self.files(tree):
+            if f.otype == 'blob':
+                yield f
 
     def object(self, commit, file, out=None):
         lines = 0
