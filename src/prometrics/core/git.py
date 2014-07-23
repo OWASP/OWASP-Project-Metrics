@@ -98,13 +98,13 @@ def git_cmd(git, path, *args):
                 _buf = p.stdout.read(BUFSIZE)
                 if not _buf:
                     # print repr(buf)
-                    yield buf
+                    yield buf.decode('utf-8', errors='replace')
                     raise StopIteration
                 buf = '%s%s' % (buf, _buf)
                 del _buf
             else:
                 # print repr(buf[:eol])
-                yield buf[:eol]
+                yield buf[:eol].decode('utf-8', errors='replace')
                 buf = buf[eol + eol_len:]
                 if not buf:
                     buf = p.stdout.read(BUFSIZE)

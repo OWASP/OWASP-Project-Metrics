@@ -4,7 +4,15 @@ import itertools
 import math
 import os
 
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
 from jinja2 import Environment, PackageLoader
+
+from pysec import tb
+
+tb.set_excepthook(tb.deep_tb)
 
 
 LANG_ADA = 'ada'
