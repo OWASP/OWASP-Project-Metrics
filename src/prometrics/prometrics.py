@@ -48,8 +48,10 @@ def launch(reporter, dir_tmp, dir_out, name, path):
                 os.mkdir(branch_out)
             print "reporting %r:%s" % (name, branch)
             reporter(repo, dirpath=proj_out, project_name=name)
-    except:
+    except KeyboardInterrupt:
         pass
+    except Exception, ex:
+        print "Error: %r" % str(ex)
 
 
 def _prometrics():
