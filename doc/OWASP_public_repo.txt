@@ -558,6 +558,11 @@ Project_Website|
 Project_Status|ACTIVE
 Repository_Status|CURRENT
 Repository_Type|GIT
+Repository_Page|https://github.com/aramrami/OWASP-CSRFGuard-3
+Repository_Link|https://github.com/aramrami/OWASP-CSRFGuard-3.git
+Repository_Link|git://github.com/aramrami/OWASP-CSRFGuard-3.git
+Repository_Status|OLD
+Repository_Type|GIT
 Repository_Page|https://github.com/esheri3/OWASP-CSRFGuard
 Repository_Link|https://github.com/esheri3/OWASP-CSRFGuard.git
 Repository_Link|git://github.com/esheri3/OWASP-CSRFGuard.git
