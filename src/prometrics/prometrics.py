@@ -1,7 +1,9 @@
 #!/usr/bin/python -OOBRtt
 from collections import namedtuple
 from datetime import datetime
+import multiprocessing as multip
 import os
+import pipes
 import tempfile
 
 from docopt import docopt
@@ -22,66 +24,93 @@ Options:
 """
 
 TMP = '/tmp/'
-PREFIX_LOG = '  +'
-
 
 OUT2MAKER = {
-    'html5': repout.to_html5
+    'html5': (repout.to_html5, repout.html5_index)
 }
+
+MAX_JOBS = 4
+
+
+def launch(reporter, dir_tmp, dir_out, name, path):
+    try:
+        # clone
+        print "cloning repository %r" % name
+        repo = core.Git.clone(path, dir_tmp)
+        # get info
+        proj_out = os.path.join(dir_out, name)
+        if not os.path.exists(proj_out):
+            os.mkdir(proj_out)
+        for branch in repo.branches():
+            repo.branch = branch
+            branch_out = os.path.join(proj_out, branch)
+            if not os.path.exists(branch_out):
+                os.mkdir(branch_out)
+            print "reporting %r:%s" % (name, branch)
+            reporter(repo, dirpath=proj_out, project_name=name)
+    except:
+        pass
 
 
 def _prometrics():
     opts = docopt(__doc__)
-    reporter = OUT2MAKER.get(opts['--output-format'], None)
+    reporter, index_reporter = OUT2MAKER.get(opts['--output-format'], None)
     if reporter is None:
         print "Error: unknown output format %r" % opts['--output-format']
         return 1
+    dirout = os.path.abspath(opts['--dir-out'])
+    if not os.path.exists(dirout):
+        os.mkdir(dirout)
     if opts['repo']:
         name = opts['--name']
         if name is None:
             name = os.path.split(opts['<PATH>'])[1]
             if name.endswith('.git'):
                 name = name[:-4]
-        paths = (name, opts['<PATH>']),
+        report_repo(reporter, name, opts['<PATH>'], dirout)
     elif opts['list']:
-        def read_paths(path):
-            with open(path, 'rb') as fl:
-                if opts['--with-name']:
-                    for line in fl:
-                        name, _, path = line.strip().partition(';')
-                        yield name, path
-                else:
-                    for line in fl:
-                        yield line.strip()
-        paths = read_paths(opts['<PATH>'])
-    #
-    dirout = os.path.abspath(opts['--dir-out'])
-    if not os.path.exists(dirout):
-        os.mkdir(dirout)
-    #
-    for name, path in paths:
-        print "Repository: %r" % path
-        # tmp
-        print PREFIX_LOG, "making temporary folder..."
-        dir_out = os.path.abspath(tempfile.mkdtemp(suffix='-repo', prefix='prometrics-', dir=TMP))
-        # XXX
-        os.chdir(dir_out)
-        # clone
-        print PREFIX_LOG, "cloning repository..."
-        repo = core.Git.clone(path, dir_out)
-        # get info
-        proj_out = os.path.join(dirout, name)
-        if not os.path.exists(proj_out):
-            os.mkdir(proj_out)
-        print PREFIX_LOG, "printing repository's report..."
-        for branch in repo.branches():
-            print ' ' * len(PREFIX_LOG), '    -', branch
-            repo.branch = branch
-            branch_out = os.path.join(proj_out, branch)
-            if not os.path.exists(branch_out):
-                os.mkdir(branch_out)
-            reporter(repo, dirpath=proj_out, project_name=name)
+        queue = []
+        procs = {}
+        index = []
+        with open(opts['<PATH>'], 'rb') as fl:
+            if opts['--with-name']:
+                for line in fl:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    name, _, path = line.strip().partition(';')
+                    queue.append((name, path))
+            else:
+                for line in fl:
+                    name = os.path.split(opts['<PATH>'])[1]
+                    if name.endswith('.git'):
+                        name = name[:-4]
+                    queue.append((name, path))
+        while queue or procs:
+            if queue and len(procs) < MAX_JOBS:
+                name, path = queue.pop(0)
+                tmp_out = os.path.abspath(tempfile.mkdtemp(suffix='-repo', prefix='prometrics-', dir=TMP))
+                args = reporter, tmp_out, dirout, name, path
+                p = multip.Process(target=launch, args=args)
+                p.start()
+                procs[p.pid] = p, name
+                index.append([name, tmp_out, path, os.path.join(dirout, name)])
+            else:
+                for pid, (proc, name) in procs.items():
+                    if not proc.is_alive():
+                        procs.pop(pid, None)
+                        print "end repository %r" % name
+        for l in index:
+            l[1] = core.Git(l[1])
+        index_reporter(dirout, index)
+    else:
+        return
 
 
 if __name__ == '__main__':
-    _prometrics()
+    try:
+        _prometrics()
+    except KeyboardInterrupt:
+        print "SIGINT interruption"
+    except Exception, ex:
+        print "Error: %r" % str(ex)
