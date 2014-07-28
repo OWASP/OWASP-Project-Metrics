@@ -10,11 +10,6 @@ sys.setdefaultencoding('utf-8')
 
 from jinja2 import Environment, PackageLoader
 
-from pysec import tb
-
-tb.set_excepthook(tb.deep_tb)
-
-
 LANG_ADA = 'ada'
 LANG_C = 'c'
 LANG_CPP = 'c++'
@@ -159,6 +154,7 @@ def to_html5(repo, dirpath='./', project_name=''):
     template = env.get_template('summary.html')
     with open(os.path.join(branch_dir, 'index.html'), 'wb') as fout:
         fout.write(template.render(
+                       now=now,
                        project=project_name,
                        branch=repo.branch,
                        commits=commits,
@@ -217,3 +213,15 @@ def to_html5(repo, dirpath='./', project_name=''):
                         exts=extensions
                    ))
 
+
+def html5_index(dirpath, repositories):
+    dirpath = os.path.abspath(dirpath)
+    #
+    env = Environment(loader=PackageLoader('prometrics', 'templates'))
+    template = env.get_template('index.html')
+    with open(os.path.join(dirpath, 'index.html'), 'wb') as fout:
+        fout.write(template.render(
+                    pathjoin=os.path.join,
+                    repositories=repositories
+                   ))
+    
