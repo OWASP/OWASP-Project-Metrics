@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Index{% endblock %}
+
+{% block topnav %}{% endblock %}
+
+{% block page %}
+<article>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Branches</th>
+        <th>Origin Path</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for name, repo, origin, path in repositories %}
+      <tr>
+        <td>{{ name }}</td>
+        <td>
+          {% for branch in repo.branches() %}
+          <a href="{{ pathjoin(pathjoin(path, branch), 'index.html') }}">{{ branch }}</a>{% if not loop.last %}, {% endif %}
+          {% endfor %}
+        </td>
+        <td>{{ origin }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</article>
+{% endblock %}
