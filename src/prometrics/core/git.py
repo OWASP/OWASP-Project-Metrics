@@ -87,7 +87,7 @@ def clone(git, repo, out):
 
 
 def git_cmd(git, path, *args):
-    p = subp.Popen((git, '--git-dir=%s' % path) + args,
+    p = subp.Popen((git, '--git-dir=%s' % os.path.join(path, '.git'), '--work-tree=%s' % path) + args,
                    stdout=subp.PIPE, stderr=subp.PIPE)
     buf = p.stdout.read(BUFSIZE)
     eol_len = len(EOL)
@@ -159,7 +159,7 @@ class Git(object):
         out = os.path.abspath(out)
         for line in clone(git, path, out):
             pass
-        return Git(os.path.join(out, '.git'))
+        return Git(out)
 
     @property
     def branch(self):
