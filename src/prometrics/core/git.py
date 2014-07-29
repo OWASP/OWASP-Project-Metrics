@@ -148,7 +148,8 @@ IN_DATA = 2
 class Git(object):
 
     def __init__(self, path, git='git'):
-        self.git_out = partial(git_cmd, str(git), os.path.abspath(path))
+        self.path = os.path.abspath(path)
+        self.git_out = partial(git_cmd, str(git), self.path)
         def git_ignore_out(*args):
             for _ in self.git_out(*args):
                 pass
