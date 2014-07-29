@@ -20,7 +20,7 @@
         <td>{{ name }}</td>
         <td>
           {% for branch in repo.branches() %}
-          <a href="{{ pathjoin(pathjoin(path, branch), 'index.html') }}">{{ branch }}</a>{% if not loop.last %}, {% endif %}
+          <a href="{{ pathjoin(pathjoin(path, prepare_fname(branch)), 'index.html') }}">{{ branch }}</a>{% if not loop.last %}, {% endif %}
           {% endfor %}
         </td>
         <td>{{ origin }}</td>
