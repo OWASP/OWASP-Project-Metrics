@@ -21,7 +21,7 @@ class ReportError(Exception):
 
 
 def prepare_fname(name):
-    return ''.join(ch.upper() for ch in name if ch.isalnum() or ch in '_ ').replace(' ', '_')
+    return ''.join(ch.upper() for ch in name if ch.isalnum() or ch in '_. ').replace(' ', '_').replace('.', '_')
 
 
 LANG_ADA = 'ada'
@@ -169,30 +169,30 @@ def to_html5(repo, dirpath='./', project_name=''):
         # summary.html
         template = env.get_template('summary.html')
         with open(os.path.join(branch_dir, 'index.html'), 'wb') as fout:
-            fout.write(template.render(
-                           now=now,
-                           project=project_name,
-                           branch=repo.branch,
-                           commits=commits,
-                           files=files,
-                           extensions=extensions,
-                           lines=tot_add-tot_rm,
-                           end_interval=last_commit,
-                           inactive_days=inactive_days,
-                           project_name='',
-                           authors=authors,
-                           start_interval=first_commit,
-                           last_7days_commits=last_7days_commits,
-                           last_30days_commits=last_30days_commits,
-                           last_90days_commits=last_90days_commits,
-                           last_7days_authors=last_7days_authors,
-                           last_30days_authors=last_30days_authors,
-                           last_90days_authors=last_90days_authors
-                       ))
+            for chunk in template.generate(
+                                       now=now,
+                                       project=project_name,
+                                       branch=repo.branch,
+                                       commits=commits,
+                                       files=files,
+                                       extensions=extensions,
+                                       lines=tot_add-tot_rm,
+                                       end_interval=last_commit,
+                                       inactive_days=inactive_days,
+                                       project_name='',
+                                       authors=authors,
+                                       start_interval=first_commit,
+                                       last_7days_commits=last_7days_commits,
+                                       last_30days_commits=last_30days_commits,
+                                       last_90days_commits=last_90days_commits,
+                                       last_7days_authors=last_7days_authors,
+                                       last_30days_authors=last_30days_authors,
+                                       last_90days_authors=last_90days_authors):
+                fout.write(chunk)
         # contributors.html
         template = env.get_template('authors.html')
         with open(os.path.join(branch_dir, 'authors.html'), 'wb') as fout:
-            for chunk in template.render(
+            for chunk in template.generate(
                                 project=project_name,
                                 authors=authors,
                                 commits=commits,
@@ -201,7 +201,7 @@ def to_html5(repo, dirpath='./', project_name=''):
         # activity.html
         template = env.get_template('activity.html')
         with open(os.path.join(branch_dir, 'activity.html'), 'wb') as fout:
-            for chunk in template.render(
+            for chunk in template.generate(
                                         project=project_name,
                                         commits=commits,
                                         hours=hours,
@@ -214,7 +214,7 @@ def to_html5(repo, dirpath='./', project_name=''):
         # code.html
         template = env.get_template('code.html')
         with open(os.path.join(branch_dir, 'code.html'), 'wb') as fout:
-            fout.write(template.render(
+            for chunk in template.generate(
                             project=project_name,
                             commits=commits,
                             files=files,
@@ -226,8 +226,8 @@ def to_html5(repo, dirpath='./', project_name=''):
                             hash2commit=hash2commit,
                             tot_add=tot_add,
                             tot_rm=tot_rm,
-                            exts=extensions
-                       ))
+                            exts=extensions):
+                fout.write(chunk)
     except jinja2.TemplateError, ex:
         raise ReportError(ex)
         
@@ -239,8 +239,8 @@ def html5_index(dirpath, repositories):
     env.globals['prepare_fname'] = prepare_fname
     template = env.get_template('index.html')
     with open(os.path.join(dirpath, 'index.html'), 'wb') as fout:
-        fout.write(template.render(
-                    pathjoin=os.path.join,
-                    repositories=repositories
-                   ))
-    
+        for chunk in template.generate(
+                                pathjoin=os.path.join,
+                                repositories=repositories):
+            fout.write(chunk)
+
