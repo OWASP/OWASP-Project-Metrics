@@ -15,11 +15,11 @@
       </tr>
     </thead>
     <tbody>
-      {% for name, repo, origin, path in repositories %}
+      {% for name, branches, origin, path in repositories %}
       <tr>
         <td>{{ name }}</td>
         <td>
-          {% for branch in repo.branches() %}
+          {% for branch in branches %}
           <a href="{{ pathjoin(pathjoin(path, prepare_fname(branch)), 'index.html') }}">{{ branch }}</a>{% if not loop.last %}, {% endif %}
           {% endfor %}
         </td>
