@@ -1,0 +1,6 @@
+OWASP OWTF;https://github.com/owtf/owtf.git
+OWASP PHP Security Project;git://github.com/OWASP/phpsec
+OWASP Development Guide Project;https://github.com/OWASP/DevGuide.git
+OWASP SafeNuGet;https://github.com/OWASP/SafeNuGet.git
+OWASP Hardened Phalcon;https://github.com/OWASP/OWASP-Hardened-Phalcon.git
+
