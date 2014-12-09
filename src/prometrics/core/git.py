@@ -18,7 +18,9 @@ from datetime import datetime, tzinfo
 from functools import partial
 import hashlib
 import os.path
+import random
 import subprocess as subp
+import string
 import tempfile
 
 
@@ -45,13 +47,37 @@ class GitFormatError(GitError):
 
 class GitCmdError(GitError):
 
-    def __init__(self, code, stderr):
+    def __init__(self, cmd, code, stderr):
+        self.cmd = tuple(cmd)
         self.code = int(code)
         self.stderr = str(stderr)
 
+    def __repr__(self):
+        return '<GitCmdError: [%d] %s by %r>' \
+               % (self.code, self.stderr.encode('string-escape'), self.cmd)
+
     def __str__(self):
-        return '<GitCmdError: [%d] %s>' \
-               % (self.code, self.stderr.encode('string-escape'))
+        return 'Git Error [%d] %s by %r' \
+               % (self.code, self.stderr.encode('string-escape'), self.cmd)
+
+
+class NeedUsernamePassword(GitCmdError):
+    pass
+
+
+class UnreachableObject(GitCmdError):
+
+    def __init__(self, obj):
+        self.obj = str(obj)
+    
+    def __str__(self):
+        return "Git Error [%d] object %r is unreachable" % self.obj
+
+
+def raise_git_error(cmd, code, stderr):
+    if stderr.endswith('Needed a single revision\n'):
+        raise UnreachableObject(cmd[-1])
+    raise GitCmdError(cmd, code, stderr)
 
 
 __all__ = 'Git',
@@ -62,7 +88,12 @@ EOL = '\n'
 
 
 def clone(git, repo, out):
-    p = subp.Popen((git, 'clone', repo, out), stdout=subp.PIPE, stderr=subp.PIPE)
+    if repo[:8] == 'https://':
+        repo = 'https://git::@%s' % repo[8:]
+    if repo[:9] == 'https://':
+        repo = 'http://git::@%s' % repo[8:]
+    cmd = git, 'clone', repo, out
+    p = subp.Popen(cmd, stdout=subp.PIPE, stderr=subp.PIPE)
     buf = p.stdout.read(BUFSIZE)
     eol_len = len(EOL)
     try:
@@ -76,6 +107,8 @@ def clone(git, repo, out):
                 buf = '%s%s' % (buf, _buf)
                 del _buf
             else:
+                if 'Username for' in buf:
+                    raise NeedUsernamePassword("need login for repository %r" % repo)
                 yield buf[:eol]
                 buf = buf[eol + eol_len:]
                 if not buf:
@@ -83,12 +116,14 @@ def clone(git, repo, out):
     finally:
         _, stderr = p.communicate()
         if p.returncode:
-            raise GitCmdError(p.returncode, stderr)
+            raise GitCmdError(cmd, p.returncode, stderr)
 
 
 def git_cmd(git, path, *args):
-    p = subp.Popen((git, '--git-dir=%s' % os.path.join(path, '.git'), '--work-tree=%s' % path) + args,
-                   stdout=subp.PIPE, stderr=subp.PIPE)
+    # print "RUN CMD: %r" % ((git, '--git-dir=%s' % os.path.join(path, '.git'), '--work-tree=%s' % path) + args,)
+    cmd = git, '--git-dir=%s' % os.path.join(path, '.git'), '--work-tree=%s' % path
+    cmd += args
+    p = subp.Popen(cmd, stdout=subp.PIPE, stderr=subp.PIPE)
     buf = p.stdout.read(BUFSIZE)
     eol_len = len(EOL)
     try:
@@ -97,13 +132,11 @@ def git_cmd(git, path, *args):
             if eol < 0:
                 _buf = p.stdout.read(BUFSIZE)
                 if not _buf:
-                    # print repr(buf)
                     yield buf.decode('utf-8', errors='replace')
                     raise StopIteration
                 buf = '%s%s' % (buf, _buf)
                 del _buf
             else:
-                # print repr(buf[:eol])
                 yield buf[:eol].decode('utf-8', errors='replace')
                 buf = buf[eol + eol_len:]
                 if not buf:
@@ -111,7 +144,7 @@ def git_cmd(git, path, *args):
     finally:
         _, stderr = p.communicate()
         if p.returncode:
-            raise GitCmdError(p.returncode, stderr)
+            raise_git_error(cmd, p.returncode, stderr)
 
 
 def rename2files(rename):
@@ -145,6 +178,16 @@ IN_INFO = 1
 IN_DATA = 2
 
 
+is_invalid = lambda fields: None in fields
+
+def restore_commit(cmt, last):
+    if cmt[5] is None:
+        cmt[5] = last.author_date
+    if cmt[8] is None:
+        cmt[8] = last.commiter_date
+    return Commit(*cmt)
+
+
 class Git(object):
 
     def __init__(self, path, git='git'):
@@ -154,6 +197,7 @@ class Git(object):
             for _ in self.git_out(*args):
                 pass
         self.git_cmd = git_ignore_out
+        self._branches = {}
 
     @staticmethod
     def clone(path, out='./', git='git'):
@@ -162,40 +206,73 @@ class Git(object):
             pass
         return Git(out)
 
+    def clean(self):
+        for line in self.git_out('reflog', 'expire', '--expire-unreachable=now', '--all'):
+            pass
+        for line in self.git_out('gc', '--prune=now'):
+            pass
+        for line in self.git_out('fsck', '--full', '--unreachable', '--strict', '--dangling', '--no-reflogs'):
+            pass
+
     @property
     def branch(self):
+        branches = {v: k for k, v in self._branches.iteritems()}
         for line in self.git_out('branch', '--list', '--all'):
             if line[0] == '*':
                 line = line.lstrip('* ').rstrip()
-                return line.rpartition(' -> ')[2].rpartition('/')[2]
+                name = line.rpartition(' -> ')[2].replace('_', '/')
+                return branches.get(name, name)
         return None
 
     @branch.setter
     def branch(self, name):
         if name not in self.branches():
              raise GitError("unknown branch: %r" % name)
-        self.git_cmd('checkout', name)
+        self.git_cmd('remote', 'update')
+        self.git_cmd('fetch')
+        if name in self._branches:
+            local_name = self._branches[name]
+        else:
+            local_name = self._branches[name] = ''.join(random.choice(string.ascii_letters) for _ in xrange(16))
+        try:
+            self.git_cmd('checkout', '-b', local_name, name)
+        except GitError, ex:
+            try:
+                self.git_cmd('checkout', name)
+            except GitError:
+                raise ex
 
     def branches(self):
         bs = set()
-        for line in self.git_out('branch', '--list', '--all'):
-            line = line.lstrip('* ').rstrip()
-            if ' -> ' in line:
+        for line in self.git_out('branch', '--list', '--all', '-r'):
+            name = line.lstrip('* ').rstrip()
+            if not line:
                 continue
-            _, _, bname = line.rpartition('/')
-            bs.add(bname)
+            if ' -> ' in name:
+                continue
+            bs.add(name)
         return bs
 
     def commits(self):
         in_data = 0
         fields = None
         text = []
-        for line in self.git_out('log', '-B', '-M20', '-C', '-l9999','--find-copies-harder',
-                                 '--pretty=format:%x00%H%x00%T%x00%P%x00%an%x00%ae%x00%ai%x00%cn%x00%ce%x00%ci%x00%s%x00',
-                                 '--pickaxe-all', '--summary'):
+        last = None
+        no_date = []
+        for line in self.git_out('log', '-B', '-M20', '-C', '-l9999','--find-copies-harder', '--pretty=format:%x00%H%x00%T%x00%P%x00%an%x00%ae%x00%ai%x00%cn%x00%ce%x00%ci%x00%s%x00', '--pickaxe-all', '--summary'):
             if in_data:
                 if line.startswith('\0'):
-                    yield Commit(*(tuple(fields[1:-1]) + ('\n'.join(text),)))
+                    fields = fields[1:-1]
+                    fields.append('\n'.join(text))
+                    if is_invalid(fields):
+                        no_date.append(fields)
+                    else:
+                        if last:
+                            while no_date:
+                                c = no_date.pop()
+                                yield restore_commit(c, last)
+                        last = Commit(*fields)
+                        yield last
                     fields = None
                     text = []
                     in_data = 0
@@ -203,17 +280,37 @@ class Git(object):
                     text.append(line)
             if not in_data:
                 fields = line.split('\x00')
-                dt, _, tz = fields[6].rpartition(' ')
-                # TODO set timezone
-                fields[6] = datetime.strptime(dt, '%Y-%m-%d %H:%M:%S')
-                dt, _, tz = fields[9].rpartition(' ')
-                # TODO set timezone
-                fields[9] = datetime.strptime(dt, '%Y-%m-%d %H:%M:%S')
                 if len(fields) != 12:
                     raise GitFormatError("invalid line %r" % line)
+                if fields[6]:
+                    dt, _, tz = fields[6].rpartition(' ')
+                    # TODO set timezone
+                    fields[6] = datetime.strptime(dt, '%Y-%m-%d %H:%M:%S')
+                else:
+                    fields[6] = None
+                if fields[9]:
+                    dt, _, tz = fields[9].rpartition(' ')
+                    # TODO set timezone
+                    fields[9] = datetime.strptime(dt, '%Y-%m-%d %H:%M:%S')
+                else:
+                    fields[9] = None
                 in_data = 1
-        if fields and text:
-            yield Commit(*(tuple(fields[1:-1]) + ('\n'.join(text),)))
+        if fields:
+            fields = fields[1:-1]
+            fields.append('\n'.join(text))
+            if is_invalid(fields):
+                no_date.append(fields)
+            else:
+                if last:
+                    while no_date:
+                        c = no_date.pop()
+                        yield restore_commit(c, last)
+                last = Commit(*fields)
+                yield last
+        if last:
+            while no_date:
+                c = no_date.pop()
+                yield restore_commit(c, last)
 
     def short2long_hash(self, short):
         return NULL_HASH if len(short) >= 7 and all(ch == '0' for ch in short) \
@@ -252,7 +349,7 @@ class Git(object):
                     continue
                 yield Change(commit, src_mode.lstrip(':'), src_hash, dst_mode.lstrip(':'), dst_hash, status, perc, src_file, dst_file)
 
-    def stats(self):
+    def stats(self):    
         for line in self.git_out('log', '-B', '-M20', '-C', '-l9999', '--numstat',
                                  '--find-copies-harder', '--pickaxe-all',
                                  '-r', '--pretty=format:%x00%H%x00'):

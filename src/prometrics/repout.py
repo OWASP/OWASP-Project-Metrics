@@ -1,8 +1,10 @@
 from collections import Counter
 from datetime import datetime
 import itertools
+import logging
 import math
 import os
+import os.path
 import string
 
 import sys
@@ -12,16 +14,28 @@ sys.setdefaultencoding('utf-8')
 from jinja2 import Environment, PackageLoader
 import jinja2
 
+from core.git import UnreachableObject
+
+import hashlib
+
+
+log = logging.getLogger('prometrics-repout')
+log.setLevel(logging.DEBUG)
+hdl = logging.StreamHandler(sys.stdout)
+fmt = logging.Formatter('%(levelname)s :: %(name)s :: %(asctime)s -> %(message)s')
+hdl.setFormatter(fmt)
+log.addHandler(hdl)
+
 
 class ReportError(Exception):
 
     def __init__(self, ex):
-        Exception.__init__(self, str(ex))
+        Exception.__init__(self, '%s: %s' % (ex.__class__.__name__, str(ex)))
         self.ex = ex
 
 
 def prepare_fname(name):
-    return ''.join(ch.upper() for ch in name if ch.isalnum() or ch in '_. ').replace(' ', '_').replace('.', '_')
+    return hashlib.sha1(name).hexdigest()
 
 
 LANG_ADA = 'ada'
@@ -65,8 +79,12 @@ EXT2LANGUAGE = {
 
 
 def to_html5(repo, dirpath='./', project_name=''):
+    dirpath = os.path.abspath(dirpath)
+    branch = repo.branch
+    branch_dir = os.path.join(dirpath, prepare_fname(branch))
+    if not os.path.exists(branch_dir):
+        os.mkdir(branch_dir)
     try:
-        dirpath = os.path.abspath(dirpath)
         #
         env = Environment(loader=PackageLoader('prometrics', 'templates'))
         env.globals['DATE_FMT'] = '%d.%m.%Y'
@@ -76,11 +94,8 @@ def to_html5(repo, dirpath='./', project_name=''):
         env.globals['EXT2LANGUAGE'] = EXT2LANGUAGE
         env.globals['prepare_fname'] = prepare_fname
         now = datetime.now()
+        bad = 0
         #
-        branch = repo.branch
-        branch_dir = os.path.join(dirpath, prepare_fname(branch))
-        if not os.path.exists(branch_dir):
-            os.mkdir(branch_dir)
         # commits
         commits = list(repo.commits())
         commits.sort(key=lambda c: c.commiter_date)
@@ -146,8 +161,17 @@ def to_html5(repo, dirpath='./', project_name=''):
                 last_90days_stats.append(st)
         #
         changes = {}
-        for ch in repo.changes():
-            changes.setdefault(ch.commit, []).append(ch)
+        ic = repo.changes()
+        while 1:
+            try:
+                ch = ic.next()
+            except StopIteration:
+                break
+            except UnreachableObject, ex:
+                log.warning("[%r] object %r is unreachable" % (project_name, ex.obj))
+                bad = 1
+            else:
+                changes.setdefault(ch.commit, []).append(ch)
         #
         for email, names in authors.iteritems():
             _, name = max((len(commits), name) for name, commits in names.iteritems())
@@ -229,7 +253,12 @@ def to_html5(repo, dirpath='./', project_name=''):
                             exts=extensions):
                 fout.write(chunk)
     except jinja2.TemplateError, ex:
+        if os.path.exists(branch_dir):
+            shutil.rmtree(branch_dir)
         raise ReportError(ex)
+    except:
+        if os.path.exists(branch_dir):
+            shutil.rmtree(branch_dir)
         
 
 def html5_index(dirpath, repositories):

@@ -37,7 +37,9 @@
       </tr>
       <tr>
         <th>Main Language</th>
-        <td>{{ EXT2LANGUAGE.get(extensions.most_common(1)[0][0], extensions.most_common(1)[0][0]) }}</td>
+        {% if extensions %}
+            <td>{{ EXT2LANGUAGE.get(extensions.most_common(1)[0][0], extensions.most_common(1)[0][0]) }}</td>
+        {% endif %}
       </tr>
       <tr>
         <th>Branch</th>

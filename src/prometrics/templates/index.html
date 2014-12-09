@@ -15,12 +15,13 @@
       </tr>
     </thead>
     <tbody>
-      {% for name, branches, origin, path in repositories %}
+      {% for name, branches, path in repositories %}
       <tr>
         <td>{{ name }}</td>
         <td>
           {% for branch in branches %}
-          <a href="{{ pathjoin(pathjoin(path, prepare_fname(branch)), 'index.html') }}">{{ branch }}</a>{% if not loop.last %}, {% endif %}
+            {% set branch_path = pathjoin(pathjoin(path, prepare_fname(branch)), 'index.html') %}
+            <a href="{{ branch_path }}">{{ branch }}</a>{% if not loop.last %}, {% endif %}    
           {% endfor %}
         </td>
         <td>{{ origin }}</td>
